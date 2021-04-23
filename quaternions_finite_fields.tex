@@ -69,7 +69,7 @@ sub-algebra's...
         |[{\bF_q^2}_{nil}]| &= q + 1
     \end{align}
 \end{theorem}
-\begin{theorem}
+\begin{proof}
     We shall consider the conjugation action of $GL_2(\bF_q)$ on $M_2(\bF_q)$ for the matrices,
     \begin{align*}
         x &= 
@@ -84,7 +84,7 @@ sub-algebra's...
         \end{pmatrix}
     \end{align*}
     These are the rational canonical forms for matrices with minimum polynomials $X^2 - 1$ and $X^2$ respectively.
-    We want to compute the size of their orbits, $G_x, G_y$, using the orbig coset correspondence theorem.
+    We want to compute the size of their orbits, $G_x, G_y$, using the orbit coset correspondence theorem.
     Now,
     \begin{align*}
         G_x &= \{A \in GL_2(\bF_q) | A \cdot x = x\} \\
@@ -99,9 +99,33 @@ sub-algebra's...
             s & t
         \end{vmatrix} = t^2 - s^2
     \end{equation*}
-    Therefore, $\det(sx + tI) = 0$ when $t^2 = s^2$, so when $t = \pm s$. We have thus found precisely $q^2 - 2q + 1$ elements of $G_x$.
+    Therefore, $\det(sx + tI) = 0$ when $t^2 = s^2$, so when $t = \pm s$. We have thus found precisely $q^2 - 2q + 1 = (q-1)^2$ elements of $G_x$. It follows that,
+    \begin{equation*}
+        [G:G_x] = \frac{(q^2-1)(q^2-q)}{(q-1)^2} = q(q-1)
+    \end{equation*}
+    By the orbit coset correspondence theorem {\color{blue} should cite/include prior} we have that $\#\operatorname{orbit}(x) = q(q + 1)$
 
-\end{theorem}
+    Similarly we have $G_y = \{A \in GL_2(\bF_q) | Ay = yA\}$ and the only possible elements of $G_y$ are those of the form $sy + tI$ for $s,t \in \bF_q$ where $sy+tI \in GL_2(\bF_q)$.
+    \begin{equation*}
+        \det(sy+tI) =
+        \begin{vmatrix}
+            t & 0 \\
+            s & t
+        \end{vmatrix} = t^2
+    \end{equation*}
+    So $\det(sy + tI) = 0$ if and only if $t = 0$. There are then $q^2 - q = q(q-1)$ elements of $G_y$. Therefore,
+    \begin{equation*}
+        [G:G_y] = \frac{(q^2-1)(q^2-q)}{q^2 - 1} = q(q-1)
+    \end{equation*}
+    and we have $\#orbit(y) = q^2 - 1$
+
+    Now, referring to {\color{blue} cite previous lemma using Cref later} we know that each plane
+
+    
+    
+
+
+\end{proof}
 
 
 
