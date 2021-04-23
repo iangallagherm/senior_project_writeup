@@ -37,7 +37,72 @@ sub-algebra's...
 
 \section{Planes in $M_2(\bF_q)$}
 
+
 \section{Plane Counts}
+
+\begin{lemma}
+    Let $A \in M_2(k)$. Let $S = \det(kA)$. Then 
+    \begin{align*}
+        S =
+        \begin{cases}
+            \{0\}                     &\text{if } \det(A) = 0 \\
+            k^{\times^2}              &\text{if } \det(A) \in k^{\times^2} \\
+            k^{\times} - k^{\times^2} &\text{if } \det(A) \in k^{\times} - k^{\times^2}
+        \end{cases}
+    \end{align*}
+%    Moreover, for elements $B, C \in kA$ if $\det(B) = \det(C) \neq 0$ then $B = C$ or $B = -C$.
+\end{lemma}
+\begin{proof}
+    Let $A \in M_2(k)$. Then $\det(\lambda A) = \det(\lambda I)\det(A) = \lambda^2\det(A)$ where $\lambda \in k$. 
+    \begin{Case}
+        \item Suppose $\det(A) = 0$. Then $\lambda^2\det(A) = 0$ for all $\lambda \in k$ and we have $S = 0$.
+        \item Suppose $\det(A) = \alpha^2$ where $\alpha \in k^{\times}$. Then $\lambda^2\det(A) = \lambda^2\alpha^2 = (\lambda\alpha)^2 \in k^{\times^2}$. It follows that $S \subseteq k^{\times^2}$. Now, let $\sigma \in k^{\times}$. Then $\det(\frac{\sigma}{\alpha}A) = \frac{\sigma^2}{\alpha^2}\alpha^2 = \sigma^2$. So $\sigma^2 \in S$ and we have shown $k^{\times^2} \subseteq S$. Therefore, $S = k^{\times^2}$.
+        \item Suppose $\det(A) = \beta$ where $\beta \in k^{\times} - k^{\times^2}$. Then $\lambda^2\det(A) = \lambda^2\beta \in k^{\times} - k^{\times^2}$. It follows that $S \subseteq k^{\times} - k^{\times^2}$. Since $|k^{\times}/k^{\times^2}| = 2$, if $\sigma, \gamma \notin k^{\times^2}$, we know there exists $\lambda \in k^{\times}$ such that $\sigma\lambda^2 = \gamma$. So $k^{\times} - k^{\times^2} \subseteq S$ is clear and we have shown $S = k^{\times} - k^{\times^2}$.
+    \end{Case}
+\end{proof}
+
+\begin{theorem}
+    This is a theorem.
+    \begin{align}
+        |[\bF_{q^2}]|       &= \binom{q}{2} \\
+        |[\bF_q^2]|         &= \binom{q + 1}{2} \\
+        |[{\bF_q^2}_{nil}]| &= q + 1
+    \end{align}
+\end{theorem}
+\begin{theorem}
+    We shall consider the conjugation action of $GL_2(\bF_q)$ on $M_2(\bF_q)$ for the matrices,
+    \begin{align*}
+        x &= 
+        \begin{pmatrix}
+            0 & 1 \\
+            1 & 0
+        \end{pmatrix} \\
+        y &=
+        \begin{pmatrix}
+            0 & 0 \\
+            1 & 0
+        \end{pmatrix}
+    \end{align*}
+    These are the rational canonical forms for matrices with minimum polynomials $X^2 - 1$ and $X^2$ respectively.
+    We want to compute the size of their orbits, $G_x, G_y$, using the orbig coset correspondence theorem.
+    Now,
+    \begin{align*}
+        G_x &= \{A \in GL_2(\bF_q) | A \cdot x = x\} \\
+            &= \{A \in GL_2(\bF_q) | AxA^{-1} = x\} \\
+            &= \{A \in GL_2(\bF_q) | Ax = xA\} 
+    \end{align*}
+    Clearly, matrices of the form $sx + tI$ for $s,t \in \bF_q$, so if $sx + tI \in GL_2(\bF_q)$, then $sx + tI \in G_x$. These are also the only possible matrices in $G_x$ since these are the elements of the maximal commutative subalgebra containing $x$ {\color{blue} requires result citation/prior inclusion}. It now suffices to determine when $\det(sx + tI) = 0$.
+    \begin{equation*}
+        \det(sx+tI) =
+        \begin{vmatrix}
+            t & s \\
+            s & t
+        \end{vmatrix} = t^2 - s^2
+    \end{equation*}
+    Therefore, $\det(sx + tI) = 0$ when $t^2 = s^2$, so when $t = \pm s$. We have thus found precisely $q^2 - 2q + 1$ elements of $G_x$.
+
+\end{theorem}
+
 
 
 
