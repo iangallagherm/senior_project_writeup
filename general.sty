@@ -1,12 +1,59 @@
+%------------------------------------------
 % LaTex style file for basic math shortcuts
-%   Author: Ian Gallagher      
+% 
+% Author: Ian Gallagher      
+%------------------------------------------
 
 \RequirePackage{amsmath}
 \RequirePackage{amssymb}
 \RequirePackage{amsthm}
 \RequirePackage{xspace}
 
-% Blackboard Bold Letters
+%------------------------------------------
+% Continuous proclamation numbering style
+%------------------------------------------
+
+%\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}%[chapter]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{cor}[theorem]{Corollary}
+\newtheorem{prop}[theorem]{Proposition}
+\newtheorem*{propn}{Proposition}
+\newtheorem{conj}[theorem]{Conjecture}
+\newtheorem{axm}{Axiom}
+
+\theoremstyle{definition}
+\newtheorem{defn}[theorem]{Definition}
+
+\newcounter{example}
+\newtheorem{ex}[example]{Example}
+\newtheorem{exm}[theorem]{Example}
+
+\newcounter{exercise}
+\newtheorem{exc}[exercise]{Exercise}
+
+\newtheorem*{thm}{Theorem}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+%\numberwithin{equation}{section}
+%\numberwithin{theorem}{chapter}
+
+%------------------------------------------
+% Custom lists
+%------------------------------------------
+\newcounter{CaseNumber}
+\newenvironment{Case}[1][1ex]
+    {\begin{list}{\text{Case} (\arabic{CaseNumber})}
+                {\setlength{\itemsep}{#1 plus 0.2ex minus 0ex}
+                 \setlength{\topsep}{1ex plus 0.2ex minus 0ex}
+                 \usecounter{CaseNumber}}}
+    {\end{list}}
+
+%------------------------------------------
+% Blackboard bold letters
+%------------------------------------------
 \newcommand{\bN}{\ensuremath{\protect\mathbb{N}}\xspace} %blackboard bold N for Natural numbers
 \newcommand{\bZ}{\ensuremath{\protect\mathbb{Z}}\xspace} %blackboard bold Z for Integers
 \newcommand{\bQ}{\ensuremath{\protect\mathbb{Q}}\xspace} %blackboard bold Q for Rational numbers
