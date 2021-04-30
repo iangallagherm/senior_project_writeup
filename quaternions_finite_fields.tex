@@ -40,6 +40,32 @@ sub-algebra's...
 
 \section{Plane Counts}
 
+\begin{theorem}
+    $M_2(\bF_q)$ has $q^2 + q + 1$ unique 2D commutative subalgebras.
+\end{theorem}
+
+Proof outline notes:
+\begin{itemize}
+    \item Each plane has $q^2$ elements.
+    \item Each plane shares the $q$ elements of $\bF_q$.
+    \item Each plane has trivial intersection.
+    \item The planes cover all of $M_2(\bF_q)$.
+\end{itemize}
+
+\begin{proof}
+    Let $E_x$ for $x \in M_2(\bF_q) - \bF_q$ be the commutative subalgbra created by the span of $1$ and $x$.
+    Label $N = |\{E_x \mid x \in M_2(\bF_q) - \bF_q \}|$.
+
+    \begin{align*}
+        N(q^2 - q) + q &= q^4 \\
+        N(q-1) + 1 &= q^3 \\
+        N(q-1) &= q^3 - 1 \\
+        N &= q^2 + q + 1
+    \end{align*}
+    A 2D commutative subalgebra $E$ must be such that $|E| = p^2$ and $\bF_q \subseteq E$.  
+    
+\end{proof}
+
 \begin{lemma}
     Let $A \in M_2(k)$. Let $S = \det(kA)$. Then 
     \begin{align*}
