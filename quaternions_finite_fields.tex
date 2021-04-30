@@ -121,7 +121,7 @@ Proof outline notes:
     \end{equation*}
     Therefore, $\det(sx + tI) = 0$ when $t^2 = s^2$, so when $t = \pm s$. We have thus found precisely $q^2 - 2q + 1 = (q-1)^2$ elements of $G_x$. It follows that,
     \begin{equation*}
-        [G:G_x] = \frac{(q^2-1)(q^2-q)}{(q-1)^2} = q(q-1)
+        [GL_2(\bF_q) : G_x] = \frac{(q^2-1)(q^2-q)}{(q-1)^2} = q(q + 1)
     \end{equation*}
     By the orbit coset correspondence theorem {\color{blue} should cite/include prior} we have that $\mathcal{O}_x = q(q + 1)$
 
@@ -133,11 +133,11 @@ Proof outline notes:
             s & t
         \end{vmatrix} = t^2
     \end{equation*}
-    So $\det(sy + tI) = 0$ if and only if $t = 0$. There are then $q^2 - q = q(q-1)$ elements of $G_y$. Therefore,
+    So $\det(sy + tI) = 0$ if and only if $t = 0$. There are then $q^2 - q$ elements of $G_y$. Therefore,
     \begin{equation*}
-        [G:G_y] = \frac{(q^2-1)(q^2-q)}{q^2 - 1} = q(q-1)
+        [GL_2(\bF_q) : G_y] = \frac{(q^2-1)(q^2-q)}{q^2 - q} = q^2 - 1
     \end{equation*}
-    and we have $\mathcal{O}_y = q^2 - 1$
+    and we have $\mathcal{O}_y = q(q - 1)$
 
     Now, referring to {\color{blue} cite previous lemma using Cref later} we know that each plane
 \end{proof}
