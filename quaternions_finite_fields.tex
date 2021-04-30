@@ -6,8 +6,10 @@
 \documentclass{amsart}
 
 \usepackage{amsmath, amsthm, amssymb}
-\usepackage{xcolor}
 \usepackage{general}
+\usepackage{xcolor}
+\usepackage{cleveref}
+
 
 \title{Investigating the Structure of $M_2(\bF_q)$}
 \author{Ian Gallagher \\ Dr. Eric Brussel}
@@ -32,15 +34,15 @@ This paper is meant to address a similar problem. Namely, the structure and
 count of the maximal commutative sub-algebras of $M_2(\bF_q)$. Such
 sub-algebra's...
 
-\section{Identifying maximal commutative sub-algebras}
-
-
 \section{Planes in $M_2(\bF_q)$}
+Need to include information here about the different plane types and how to determine the plane type based on the minimum polynomial of a nontrivial element of the plane.
 
+\section{Identifying maximal commutative sub-algebras}
+Include theorem from Jacobson paper.
 
 \section{Plane Counts}
 
-\begin{theorem}
+\begin{theorem}\label{totalcount}
     $M_2(\bF_q)$ has $q^2 + q + 1$ unique 2D commutative subalgebras.
 \end{theorem}
 
@@ -65,11 +67,7 @@ Proof outline notes:
         N &= q^2 + q + 1
     \end{align*}
     
-\end{proof}
-
-\begin{lemma}
-    Let k be a field such that $\left[k : k^{\times2}\right] = 2$ and $A \in M_2(k)$. Define $S = \{\lambda A \mid \lambda \in k^{\times} \}$.
-    \begin{align*}
+\end{proof} \begin{lemma} Let k be a field such that $\left[k : k^{\times2}\right] = 2$ and $A \in M_2(k)$. Define $S = \{\lambda A \mid \lambda \in k^{\times} \}$.  \begin{align*}
         S =
         \begin{cases}
             \{0\}                     &\text{if } \det(A) = 0 \\
@@ -83,7 +81,7 @@ Proof outline notes:
     Let $A \in M_2(k)$. Then $\det(\lambda A) = \det(\lambda I)\det(A) = \lambda^2\det(A)$ where $\lambda \in k$.  If $\det(A) = 0$, then $\det(\lambda A) = 0$ for $\lambda \in k$ and $S = \{0\}$ follows. Otherwise, we know that the quotient group $k^{\times}/k^{\times2}$ has only the two cosets $k^{\times2}, k^{\times} - k^{\times2}$. So if $\det(A) \in k^{\times2}$, we have $S = \{\lambda^2 \det(A) \mid \lambda \in k^{\times}\} = k^{\times2}$ and similarly, if $\det(A) \in k^{\times} - k^{\times2}$, then $S = \{\lambda^2 \det(A) \mid \lambda \in k^{\times}\} = k^{\times} - k^{\times2}$.
 \end{proof}
 
-\begin{lemma}
+\begin{lemma}\label{orbitsizes}
     Consider the following elements of $M_2(\bF_q)$.
     \begin{align*}
         x &= 
@@ -138,8 +136,6 @@ Proof outline notes:
         [GL_2(\bF_q) : G_y] = \frac{(q^2-1)(q^2-q)}{q^2 - q} = q^2 - 1
     \end{equation*}
     and we have $\mathcal{O}_y = q(q - 1)$
-
-    Now, referring to {\color{blue} cite previous lemma using Cref later} we know that each plane
 \end{proof}
 
 \begin{theorem}
@@ -149,9 +145,14 @@ Proof outline notes:
         |[{\bF_q^2}_{nil}]|            &= q + 1
     \end{align}
 \end{theorem}
-$x, y$ are the rational canonical forms for matrices with minimum polynomials $X^2 - 1$ and $X^2$ respectively.
+\begin{proof}
+The elements $x, y$ from \cref{orbitsizes} are the rational canonical forms for all matrices with minimum polynomials $X^2 - 1$ and $X^2$ respectively. 
 
+Since $X^2 - 1 = (X + 1)(X - 1)$ in $M_2(\bF_q)$ and $\operatorname{char}(\bF_q) \neq 2$ {\color{blue} this must be included in the introductory sections}, all of the elements of $\mathcal{O}_x$ belong to an embedding of $\bF_q \times \bF_q$. Additionally any embedding of $\bF_q \times \bF_q$ must be of this form...
 
+Now, referring to {\color{blue} cite previous lemma using Cref later} we know that each plane...
 
+By \cref{totalcount}, ...
+\end{proof}
 
 \end{document}
