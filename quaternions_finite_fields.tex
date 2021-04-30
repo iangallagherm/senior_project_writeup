@@ -56,18 +56,19 @@ Proof outline notes:
     Let $E_x$ for $x \in M_2(\bF_q) - \bF_q$ be the commutative subalgbra created by the span of $1$ and $x$.
     Label $N = |\{E_x \mid x \in M_2(\bF_q) - \bF_q \}|$.
 
+    %A 2D commutative subalgebra $E$ must be such that $|E| = p^2$ and $\bF_q \subseteq E$.
+
     \begin{align*}
         N(q^2 - q) + q &= q^4 \\
         N(q-1) + 1 &= q^3 \\
         N(q-1) &= q^3 - 1 \\
         N &= q^2 + q + 1
     \end{align*}
-    A 2D commutative subalgebra $E$ must be such that $|E| = p^2$ and $\bF_q \subseteq E$.  
     
 \end{proof}
 
 \begin{lemma}
-    Let $A \in M_2(k)$. Let $S = \det(kA)$. Then 
+    Let k be a field such that $\left[k : k^{\times2}\right] = 2$ and $A \in M_2(k)$. Define $S = \{\lambda A \mid \lambda \in k^{\times} \}$.
     \begin{align*}
         S =
         \begin{cases}
@@ -79,12 +80,7 @@ Proof outline notes:
 %    Moreover, for elements $B, C \in kA$ if $\det(B) = \det(C) \neq 0$ then $B = C$ or $B = -C$.
 \end{lemma}
 \begin{proof}
-    Let $A \in M_2(k)$. Then $\det(\lambda A) = \det(\lambda I)\det(A) = \lambda^2\det(A)$ where $\lambda \in k$. 
-    \begin{Case}
-        \item Suppose $\det(A) = 0$. Then $\lambda^2\det(A) = 0$ for all $\lambda \in k$ and we have $S = 0$.
-        \item Suppose $\det(A) = \alpha^2$ where $\alpha \in k^{\times}$. Then $\lambda^2\det(A) = \lambda^2\alpha^2 = (\lambda\alpha)^2 \in k^{\times2}$. It follows that $S \subseteq k^{\times2}$. Now, let $\sigma \in k^{\times}$. Then $\det(\frac{\sigma}{\alpha}A) = \frac{\sigma^2}{\alpha^2}\alpha^2 = \sigma^2$. So $\sigma^2 \in S$ and we have shown $k^{\times2} \subseteq S$. Therefore, $S = k^{\times2}$.
-        \item Suppose $\det(A) = \beta$ where $\beta \in k^{\times} - k^{\times2}$. Then $\lambda^2\det(A) = \lambda^2\beta \in k^{\times} - k^{\times2}$. It follows that $S \subseteq k^{\times} - k^{\times2}$. Since $|k^{\times}/k^{\times2}| = 2$, if $\sigma, \gamma \notin k^{\times2}$, we know there exists $\lambda \in k^{\times}$ such that $\sigma\lambda^2 = \gamma$. So $k^{\times} - k^{\times2} \subseteq S$ is clear and we have shown $S = k^{\times} - k^{\times2}$.
-    \end{Case}
+    Let $A \in M_2(k)$. Then $\det(\lambda A) = \det(\lambda I)\det(A) = \lambda^2\det(A)$ where $\lambda \in k$.  If $\det(A) = 0$, then $\det(\lambda A) = 0$ for $\lambda \in k$ and $S = \{0\}$ follows. Otherwise, we know that the quotient group $k^{\times}/k^{\times2}$ has only the two cosets $k^{\times2}, k^{\times} - k^{\times2}$. So if $\det(A) \in k^{\times2}$, we have $S = \{\lambda^2 \det(A) \mid \lambda \in k^{\times}\} = k^{\times2}$ and similarly, if $\det(A) \in k^{\times} - k^{\times2}$, then $S = \{\lambda^2 \det(A) \mid \lambda \in k^{\times}\} = k^{\times} - k^{\times2}$.
 \end{proof}
 
 \begin{lemma}
@@ -115,7 +111,7 @@ Proof outline notes:
             &= \{A \in GL_2(\bF_q) \mid AxA^{-1} = x\} \\
             &= \{A \in GL_2(\bF_q) \mid Ax = xA\} 
     \end{align*}
-    Inevitably, matrices of the form $sx + tI$ commute with $x$ for $s,t \in \bF_q$, so if $sx + tI \in GL_2(\bF_q)$, then $sx + tI \in G_x$. These are also the only possible matrices in $G_x$ since these are the elements of the maximal commutative subalgebra containing $x$ {\color{blue} requires result citation/prior inclusion}. It now suffices to determine when $\det(sx + tI) = 0$.
+    Inevitably, matrices of the form $sx + tI$ commute with $x$ for $s,t \in \bF_q$, so if $sx + tI \in GL_2(\bF_q)$, then $sx + tI \in G_x$. These are also the only possible matrices in $G_x$ since they are the elements of the maximal commutative subalgebra containing $x$ {\color{blue} requires result citation/prior inclusion}. It now suffices to determine when $\det(sx + tI) = 0$.
     \begin{equation*}
         \det(sx+tI) =
         \begin{vmatrix}
@@ -127,7 +123,7 @@ Proof outline notes:
     \begin{equation*}
         [G:G_x] = \frac{(q^2-1)(q^2-q)}{(q-1)^2} = q(q-1)
     \end{equation*}
-    By the orbit coset correspondence theorem {\color{blue} should cite/include prior} we have that $\#\operatorname{orbit}(x) = q(q + 1)$
+    By the orbit coset correspondence theorem {\color{blue} should cite/include prior} we have that $\mathcal{O}_x = q(q + 1)$
 
     Similarly we have $G_y = \{A \in GL_2(\bF_q) | Ay = yA\}$ and the only possible elements of $G_y$ are those of the form $sy + tI$ for $s,t \in \bF_q$ where $sy+tI \in GL_2(\bF_q)$.
     \begin{equation*}
@@ -141,7 +137,7 @@ Proof outline notes:
     \begin{equation*}
         [G:G_y] = \frac{(q^2-1)(q^2-q)}{q^2 - 1} = q(q-1)
     \end{equation*}
-    and we have $\#orbit(y) = q^2 - 1$
+    and we have $\mathcal{O}_y = q^2 - 1$
 
     Now, referring to {\color{blue} cite previous lemma using Cref later} we know that each plane
 \end{proof}
