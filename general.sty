@@ -8,6 +8,7 @@
 \RequirePackage{amssymb}
 \RequirePackage{amsthm}
 \RequirePackage{xspace}
+\RequirePackage{cleveref}
 
 %------------------------------------------
 % Continuous proclamation numbering style
@@ -36,6 +37,12 @@
 
 \theoremstyle{remark}
 \newtheorem{remark}[theorem]{Remark}
+
+% Cleveref package bindings for theorem styles
+\crefname{theorem}{theorem}{theorems}
+\Crefname{theorem}{Theorem}{Theorems}
+\crefname{lemma}{lemma}{lemmas}
+\Crefname{lemma}{Lemma}{Lemmas}
 
 %\numberwithin{equation}{section}
 %\numberwithin{theorem}{chapter}
