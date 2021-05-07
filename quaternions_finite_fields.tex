@@ -35,7 +35,31 @@ count of the maximal commutative sub-algebras of $M_2(\bF_q)$. Such
 sub-algebra's...
 
 \section{Planes in $M_2(\bF_q)$}
-Need to include information here about the different plane types and how to determine the plane type based on the minimum polynomial of a nontrivial element of the plane.
+    For a matrix $A \in M_2(\bF_q)$, we know
+    \begin{enumerate}
+        \item $A$'s characteristic polynomial: $p_A(X) = X^2 -\operatorname{tr}(A)X + \det(A)$.
+        \item $A$'s minimum polynomial: $m_A(X) = X - A$ if $A \in \bF_q$. Otherwise, $m_A(X) = p_A(X)$.
+    \end{enumerate}
+
+    This gives an evaluation map $\epsilon_A : \bF_q[X] \rightarrow M_2(\bF_q)$ taking $f(X)$ to $f(A)$, which is a $\bF_q$-linear ring homomorphism with image $\bF_q[A] \subseteq M_2(\bF_q)$. The kernel is nontrivial, since $M_2(\bF_q)$ has finite $\bF_q$-dimension and $\bF_q[X]$ does not. It follows that $ker(\epsilon_A) = (m_A(X))$. By the First Isomorphism Theorem,
+    \begin{align*}
+        \frac{\bF_q(X)}{(m_A(X))} \cong \bF_q[A]
+    \end{align*}
+
+    So if $A \in M_2(\bF_q) - \bF_q$, we know $m_A(X) = p_A(X)$ is degree $2$ and $\bF_q(A)$ has $\bF_q$-dimension 2.
+
+    Thus, we have that each such $A$ generates the unique 2 dimensional commutative sub-algebra of $M_2(\bF_q)$ containing $A$. All possible 2 dimensional commutative sub-algebra's are therefore of the form
+    \begin{align*}
+        \frac{\bF_q(X)}{(m_A(X))}
+    \end{align*}
+    for some $A \in M_2(\bF_q) - \bF_q$. The set of two dimensional commutative sub-algebra's of $M_2(\bF_q)$ must then be composed of exactly three isomorphism classes based on $m_A(X)$
+    \begin{enumerate}
+        \item If $m_A(X)$ is irreducible, then $\bF_q[A] \cong \bF_q^2$
+        \item If $m_A(X)$ is reducible but not separable, then $\bF_q[A] \cong \bF_q \times \bF_q$
+        \item If $m_A(X)$ is separable, then $\bF_q[A] \cong {\bF_q^2}_{nil}$ the degenerate nilpotent case.
+    \end{enumerate}
+
+    
 
 \section{Identifying maximal commutative sub-algebras}
 Include theorem from Jacobson paper.
