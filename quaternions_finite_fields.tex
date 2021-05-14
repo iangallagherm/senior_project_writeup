@@ -77,7 +77,7 @@ In the case of $M_2(\bF_q)$, $n=2$ and we have that $N(2) = \lfloor 2^2/4 \rfloo
 
 \section{Plane Counts}
 
-\begin{theorem}\label{totalcount}
+\begin{theorem}\label{total-count}
     $M_2(\bF_q)$ has $q^2 + q + 1$ unique 2D commutative subalgebras.
 \end{theorem}
 
@@ -102,7 +102,10 @@ Proof outline notes:
         N &= q^2 + q + 1
     \end{align*}
     
-    \end{proof} \begin{lemma} Let k be a field such that $\left[k : k^{\times2}\right] = 2$ and $A \in M_2(k)$. Define $S = \{\det( \lambda A ) \mid \lambda \in k^{\times} \}$.  \begin{align*}
+    \end{proof} 
+
+    \begin{lemma}\label{square-quotient-cosets}
+    Let k be a field such that $\left[k : k^{\times2}\right] = 2$ and $A \in M_2(k)$. Define $S = \{\det( \lambda A ) \mid \lambda \in k^{\times} \}$.  \begin{align*}
         S =
         \begin{cases}
             \{0\}                     &\text{if } \det(A) = 0 \\
@@ -116,7 +119,7 @@ Proof outline notes:
     Let $A \in M_2(k)$. Then $\det(\lambda A) = \det(\lambda I)\det(A) = \lambda^2\det(A)$ where $\lambda \in k$.  If $\det(A) = 0$, then $\det(\lambda A) = 0$ for $\lambda \in k$ and $S = \{0\}$ follows. Otherwise, we know that the quotient group $k^{\times}/k^{\times2}$ has only the two cosets $k^{\times2}, k^{\times} - k^{\times2}$. So if $\det(A) \in k^{\times2}$, we have $S = \{\lambda^2 \det(A) \mid \lambda \in k^{\times}\} = k^{\times2}$ and similarly, if $\det(A) \in k^{\times} - k^{\times2}$, then $S = \{\lambda^2 \det(A) \mid \lambda \in k^{\times}\} = k^{\times} - k^{\times2}$.
 \end{proof}
 
-\begin{lemma}\label{orbitsizes}
+\begin{lemma}\label{orbit-sizes}
     Consider the following elements of $M_2(\bF_q)$.
     \begin{align*}
         x &= 
@@ -181,13 +184,13 @@ Proof outline notes:
     \end{align}
 \end{theorem}
 \begin{proof}
-The elements $x, y$ from \cref{orbitsizes} are the rational canonical forms for all matrices with minimum polynomials $X^2 - 1$ and $X^2$ respectively. 
+The elements $x, y$ from \cref{orbit-sizes} are the rational canonical forms for all matrices with minimum polynomials $X^2 - 1$ and $X^2$ respectively. 
 
 Since $X^2 - 1 = (X + 1)(X - 1)$ in $M_2(\bF_q)$ and $\operatorname{char}(\bF_q) \neq 2$ {\color{blue} this must be included in the introductory sections}, all of the elements of $\mathcal{O}_x$ belong to an embedding of $\bF_q \times \bF_q$. Additionally any embedding of $\bF_q \times \bF_q$ must be of this form...
 
-Now, referring to {\color{blue} cite previous lemma using Cref later} we know that each plane...
+Now, referring to \cref{square-quotient-cosets} we know that each plane isomorphic to $\bF_q \times \bF_q$
 
-By \cref{totalcount}, ...
+By \cref{total-count}, ...
 \end{proof}
 
 \begin{bibdiv}
