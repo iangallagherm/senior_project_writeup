@@ -5,7 +5,7 @@
 %   School:     Cal Poly San Luis Obispo
 \documentclass{amsart}
 
-\usepackage{amsmath, amsthm, amssymb}
+\usepackage{amsmath, amsthm, amssymb, amsrefs}
 \usepackage{general}
 \usepackage{xcolor}
 \usepackage{cleveref}
@@ -62,7 +62,10 @@ sub-algebra's...
     
 
 \section{Identifying maximal commutative sub-algebras}
-Include theorem from Jacobson paper.
+
+\begin{thm}[Jacobson~\cite{Jacobson44}]
+    For an arbitrary field $k$, the maximum number $N(n)$ of linearly independent commutative matrices of $n$ rows and columns is given by the formula $N(n) = \lfloor n^2/4 \rfloor + 1$.
+\end{thm}
 
 \section{Plane Counts}
 
@@ -178,5 +181,18 @@ Now, referring to {\color{blue} cite previous lemma using Cref later} we know th
 
 By \cref{totalcount}, ...
 \end{proof}
+
+\begin{bibdiv}
+    \begin{biblist}
+        \bib{Jacobson44}{article}{
+            title={Schur's Theorems on Commutative Matrices},
+            author={Nathan Jacobson},
+            journal={Bull. Amer. Math. Soc.},
+            volume={50},
+            date={1944},
+            pages={431--436}
+        }
+    \end{biblist}
+\end{bibdiv}
 
 \end{document}
