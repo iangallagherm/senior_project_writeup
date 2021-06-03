@@ -43,18 +43,18 @@ sub-algebra's...
 
     This gives an evaluation map $\epsilon_A : \bF_q[X] \rightarrow M_2(\bF_q)$ taking $f(X)$ to $f(A)$, which is a $\bF_q$-linear ring homomorphism with image $\bF_q[A] \subseteq M_2(\bF_q)$. The kernel is nontrivial, since $M_2(\bF_q)$ has finite $\bF_q$-dimension and $\bF_q[X]$ does not. It follows that $ker(\epsilon_A) = (m_A(X))$. By the First Isomorphism Theorem,
     \begin{align*}
-        \frac{\bF_q(X)}{(m_A(X))} \cong \bF_q[A]
+        \frac{\bF_q[X]}{(m_A(X))} \cong \bF_q[A]
     \end{align*}
 
-    So if $A \in M_2(\bF_q) - \bF_q$, we know $m_A(X) = p_A(X)$ is degree $2$ and $\bF_q(A)$ has $\bF_q$-dimension 2.
+    So if $A \in M_2(\bF_q) - \bF_q$, we know $m_A(X) = p_A(X)$ is degree $2$ and $\bF_q[A]$ has $\bF_q$-dimension 2.
 
     Thus, we have that each such $A$ generates the unique 2 dimensional commutative sub-algebra of $M_2(\bF_q)$ containing $A$. All possible 2 dimensional commutative sub-algebra's are therefore of the form
     \begin{align*}
-        \frac{\bF_q(X)}{(m_A(X))}
+        \frac{\bF_q[X]}{(m_A(X))}
     \end{align*}
     for some $A \in M_2(\bF_q) - \bF_q$. The set of two dimensional commutative sub-algebra's of $M_2(\bF_q)$ must then be composed of exactly three isomorphism classes based on $m_A(X)$
     \begin{enumerate}
-        \item If $m_A(X)$ is irreducible, then $\bF_q[A] \cong \bF_q^2$
+        \item If $m_A(X)$ is irreducible, then $\bF_q[A] \cong \bF_{q^2}$
         \item If $m_A(X)$ is reducible but not separable, then $\bF_q[A] \cong \bF_q \times \bF_q$
         \item If $m_A(X)$ is separable, then $\bF_q[A] \cong {\bF_q^2}_{nil}$ the degenerate nilpotent case.
     \end{enumerate}
@@ -91,13 +91,11 @@ Proof outline notes:
 
 \begin{proof}
     Let $E_x$ for $x \in M_2(\bF_q) - \bF_q$ be the commutative subalgbra created by the span of $1$ and $x$.
-    Label $N = |\{E_x \mid x \in M_2(\bF_q) - \bF_q \}|$.
-
-    %A 2D commutative subalgebra $E$ must be such that $|E| = p^2$ and $\bF_q \subseteq E$.
+    Label $N = |\{E_x \mid x \in M_2(\bF_q) - \bF_q \}|$, the number of unique 2D commutative subalgebras. Let $x, y \in M_2(\bF_q) - \bF_q$. $E_x, E_y$ are both two dimensional $\bF_q$ algebra's so we know that $E_x \cap E_y$ is also a $\bF_q$-algebra. By dimension arguments, we have either $E_x = E_y$ or $E_x \cap E_y = \bF_q$. It follows that $\{E_x - \bF_q \mid x \in M_2(\bF_q) - \bF_q \}$ is a partition of $M_2(\bF_q) - \bF_q$. The following then holds,
 
     \begin{align*}
-        N(q^2 - q) + q &= q^4 \\
-        N(q-1) + 1 &= q^3 \\
+        N ( | E_x | - | \bF_q | ) &= | M_2(\bF_q) | - | \bF_q | \\
+        N(q^2 - q) &= q^4 - q \\
         N(q-1) &= q^3 - 1 \\
         N &= q^2 + q + 1
     \end{align*}
