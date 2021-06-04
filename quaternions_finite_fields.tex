@@ -60,12 +60,12 @@ For the duration of the paper, $q = p^n$ for some prime $p \neq 2$.
 \end{align*}
 \end{defn}
 
-\begin{theorem}[Wedderburn]
+\begin{theorem}[Wedderburn]\label{wedderburn}
     {\color{blue} requires citation}
     Let $k$ be a field and $A$ a central simple algebra. Then $A \simeq M_n(D)$ for some $k$-division algebra $D$.
 \end{theorem}
 
-\begin{theorem}[Chevalley-Warning]
+\begin{theorem}[Chevalley-Warning]\label{c-warning}
     {\color{blue} requires citation}
     Let $f_{\alpha} \in \bF_q[X_1, \dots, X_n]$ be polynomials in $n$ variables such that $\sum_{\alpha} \deg f_{\alpha} < n$ and let $V$ be the set of their common zeros in $\bF_q^n$. One has 
     \begin{align*}
@@ -73,16 +73,27 @@ For the duration of the paper, $q = p^n$ for some prime $p \neq 2$.
     \end{align*}
 \end{theorem}
 
-\begin{lemma}
-    $N_{a,b}(X)$ has a nontrivial zero over $A_{a,b}(\bF_q)$.
+\begin{lemma}\label{norm-nontrivial-zero}
+    $N_{a,b}(X_1 + iX_2 + jX_3 + kX_4)$ has a nontrivial zero over $A_{a,b}(\bF_q)$.
 \end{lemma}
 \begin{proof}
-    TBD  
+    For this, we make use of \cref{c-warning}. Let 
+    \begin{align*}
+        f_1 &= N_{a,b}(X_1 + iX_2 + jX_3 + kX_4) \\
+            &= X_1^2 -aX_2^2 -bX_3^2 + abX_4^2 \\
+            &\in \bF_q[X_1, X_2, X_3, X_4]
+    \end{align*}
+    Here, $\deg f_1 = 2 < 4$, so Chevalley-Warning holds and $|V| \equiv 0 \pmod{p}$. Note that $f(0,0,0,0) = 0$, so we must have $p$ divides $|V|$. Therefore, $f_1$ has a nontrivial zero and this completes the proof.
 \end{proof}
 
 \begin{theorem}
     $A_{a,b}(\bF_q) \cong M_2(\bF_q)$ 
 \end{theorem}
+\begin{proof}
+    By \cref{norm-nontrivial-zero}, there exists $q \in A_{a,b}(\bF_q)$, $q \neq 0$, such that $N_{a,b}(q) = q \overline{q} = 0$. In other words, $A_{a,b}(\bF_q)$ has nontrivial zero divisors and is therefore not a $\bF_q$-division algebra. By \cref{wedderburn} we must have $A_{a,b}(\bF_q) \cong M_2(D)$ for some $\bF_q$-division algebra D. However, $\dim_{\bF_q} A_{a,b}(\bF_q) = 4$, so $D$ must have $\bF_q$-dimension 1.
+
+    $\therefore D \cong \bF_q$ and $A_{a,b}(\bF_q) \cong M_2(\bF_q)$. 
+\end{proof}
 
 \section{Planes in $M_2(\bF_q)$}
     For a matrix $A \in M_2(\bF_q)$, we know
