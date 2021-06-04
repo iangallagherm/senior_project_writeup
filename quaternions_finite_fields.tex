@@ -34,9 +34,10 @@ This paper is meant to address a similar problem. Namely, the structure and
 count of the maximal commutative sub-algebras of $M_2(\bF_q)$. Such
 sub-algebra's...
 
-\section{Generalized Quaternions and $M_2(\bF_q)$}
-
 For the duration of the paper, $q = p^n$ for some prime $p \neq 2$.
+
+\section{Generalized Quaternions and $M_2(\bF_q)$}
+Here, we introduce an alternative formulation of $M_2(\bF_q)$ based on the generalized quaternions, an abstraction of the well-known quaternion algebra. This formulation lends itself nicely to a more general result detailing the structure of commutative sub-algebras of $M_2(\bF_q)$.
 
 \begin{defn}[Generalized Quaternions]
     Let $k$ be a field, $\operatorname{char} k \neq 2$, and fix $a,b \in k-\{0\}$. Then the \textit{generalized quaternions} are a central simple $k$-algebra (CSA) of the form 
@@ -45,6 +46,8 @@ For the duration of the paper, $q = p^n$ for some prime $p \neq 2$.
     \text{ where }i^2 =a, j^2 = b, \text{ and } ij = -ji=l
 \end{gather*}
 \end{defn}
+
+We also introduce an alternative vector notation for the generalized quaternions that is useful for cleaner computations.
 
 \begin{defn}[Generalized Quaternions, Vector Notation]
 \begin{gather*}
@@ -60,13 +63,14 @@ For the duration of the paper, $q = p^n$ for some prime $p \neq 2$.
 \end{align*}
 \end{defn}
 
+It turns out that $M_2(\bF_q)$ is the only isomorphism class of generalized quaternions over $\bF_q$ but this fact is not immediately obvious. To prove this, we cite but do not prove the following results. 
+
 \begin{theorem}[Wedderburn]\label{wedderburn}
     {\color{blue} requires citation}
     Let $k$ be a field and $A$ a central simple algebra. Then $A \simeq M_n(D)$ for some $k$-division algebra $D$.
 \end{theorem}
 
-\begin{theorem}[Chevalley-Warning]\label{c-warning}
-    {\color{blue} requires citation}
+\begin{theorem}[Chevalley-Warning~\cite{Serre}]\label{c-warning}
     Let $f_{\alpha} \in \bF_q[X_1, \dots, X_n]$ be polynomials in $n$ variables such that $\sum_{\alpha} \deg f_{\alpha} < n$ and let $V$ be the set of their common zeros in $\bF_q^n$. One has 
     \begin{align*}
         | V | \equiv 0 \pmod{p}
@@ -263,6 +267,15 @@ By \cref{total-count}, ...
             volume={50},
             date={1944},
             pages={431--436}
+        }
+        \bib{Serre}{book}{
+            title={A Course in Arithmetic},
+            subtitle={Graduate Texts in Mathematics},
+            author={Jean-Pierre Serre},
+            publisher={Springer-Verlag},
+            address={New York},
+            date={1973},
+            pages={5}
         }
     \end{biblist}
 \end{bibdiv}
