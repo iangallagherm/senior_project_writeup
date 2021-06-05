@@ -68,6 +68,8 @@ It turns out that $M_2(\bF_q)$ is the only isomorphism class of generalized quat
     \end{align*}
 \end{theorem}
 
+With these theorems, we can now give a succint explanation for the structure of the generalized quaternions over $\bF_q$
+
 \begin{lemma}\label{norm-nontrivial-zero}
     $N_{a,b}(X_1 + iX_2 + jX_3 + kX_4)$ has a nontrivial zero over $A_{a,b}(\bF_q)$.
 \end{lemma}
@@ -85,7 +87,7 @@ It turns out that $M_2(\bF_q)$ is the only isomorphism class of generalized quat
     $A_{a,b}(\bF_q) \cong M_2(\bF_q)$ 
 \end{theorem}
 \begin{proof}
-    By \cref{norm-nontrivial-zero}, there exists $q \in A_{a,b}(\bF_q)$, $q \neq 0$, such that $N_{a,b}(q) = q \overline{q} = 0$. In other words, $A_{a,b}(\bF_q)$ has nontrivial zero divisors and is therefore not a $\bF_q$-division algebra. By \cref{wedderburn} we must have $A_{a,b}(\bF_q) \cong M_2(D)$ for some $\bF_q$-division algebra D. However, $\dim_{\bF_q} A_{a,b}(\bF_q) = 4$, so $D$ must have $\bF_q$-dimension 1.
+    By \cref{norm-nontrivial-zero}, there exists $q \in A_{a,b}(\bF_q)$, $q \neq 0$, such that $N_{a,b}(q) = q \overline{q} = 0$. In other words, $A_{a,b}(\bF_q)$ has nontrivial zero divisors and is therefore not a $\bF_q$-division algebra. By \cref{wedderburn} we must have $A_{a,b}(\bF_q) \cong M_n(D)$ for some $\bF_q$-division algebra $D$ and natural number $n$. However, $\dim_{\bF_q} A_{a,b}(\bF_q) = 4$, so $n=2$ and $D$ must have $\bF_q$-dimension 1.
 
     $\therefore D \cong \bF_q$ and $A_{a,b}(\bF_q) \cong M_2(\bF_q)$. 
 \end{proof}
@@ -110,11 +112,11 @@ It turns out that $M_2(\bF_q)$ is the only isomorphism class of generalized quat
     \end{align*}
     for some $A \in M_2(\bF_q) - \bF_q$. The set of two dimensional commutative sub-algebra's of $M_2(\bF_q)$ must then be composed of exactly three isomorphism classes based on $m_A(X)$
     \begin{enumerate}
-        \item If $m_A(X)$ is irreducible, then $\bF_q[A] \cong \bF_{q^2}$
-        \item If $m_A(X)$ is reducible but not separable, then $\bF_q[A] \cong \bF_q \times \bF_q$
-        \item If $m_A(X)$ is separable, then $\bF_q[A] \cong {\bF_q^2}_{nil}$ the degenerate nilpotent case.
+        \item If $m_A(X)$ is irreducible, define $K_{-1} = \bF_q[A] \cong \bF_{q^2}$.
+        \item If $m_A(X)$ is reducible but not separable, define $K_{1} = \bF_q[A] \cong \bF_q \times \bF_q$.
+        \item If $m_A(X)$ is separable, define $K_{0} = \bF_q[A] \cong {\bF_q^2}_{nil}$ the degenerate nilpotent case.
     \end{enumerate}
-
+    It is worth noting that the case that $m_A(X)$ is both separable and irreducible does not require consideration seeing as finite fields are perfect.
     
 
 \section{Identifying maximal commutative subalgebras}
@@ -142,7 +144,7 @@ To prove that there are no commutative subalgebras of dimension 3, we return to 
                 v_1i & v_2j \\
                 w_1i & w_2j
             \end{vmatrix}\right\rangle \\
-                                    &= \langle -v_2w_3 + v_3w_2)bi , (v_1w_3 - v_3w_1)aj + (v_1w_2 - v_2w_1)l
+                                     &= \langle (-v_2w_3 + v_3w_2)bi , (v_1w_3 - v_3w_1)aj, (v_1w_2 - v_2w_1)l \rangle
     \end{align*}
     Compare this to $\langle v_1, v_2, v_3 \rangle \times \langle w_1, w_2, w_3 \rangle = \langle v_2w_3 - v_3w_2, -v_1w_3 + v_3w_1, v_1w_2 - v_2w_1 \rangle$. Thus 
     \begin{align*}
@@ -180,7 +182,7 @@ Now, $A_{a,b}(\bF_q) \cong M_2(\bF_q)$, so \cref{commutative-subalgebras} suffic
 \section{Plane Counts}
 
 \begin{theorem}\label{total-count}
-    $M_2(\bF_q)$ has $q^2 + q + 1$ unique 2D commutative subalgebras.
+    $M_2(\bF_q)$ has $q^2 + q + 1$ unique nontrival commutative subalgebras.
 \end{theorem}
 
 \begin{proof}
@@ -196,20 +198,20 @@ Now, $A_{a,b}(\bF_q) \cong M_2(\bF_q)$, so \cref{commutative-subalgebras} suffic
     
     \end{proof} 
 
-    \begin{lemma}\label{square-quotient-cosets}
-    Let k be a field such that $\left[k : k^{\times2}\right] = 2$ and $A \in M_2(k)$. Define $S = \{\det( \lambda A ) \mid \lambda \in k^{\times} \}$.  \begin{align*}
-        S =
-        \begin{cases}
-            \{0\}                     &\text{if } \det(A) = 0 \\
-            k^{\times2}              &\text{if } \det(A) \in k^{\times2} \\
-            k^{\times} - k^{\times2} &\text{if } \det(A) \in k^{\times} - k^{\times2}
-        \end{cases}
-    \end{align*}
+%    \begin{lemma}\label{square-quotient-cosets}
+%    Let k be a field such that $\left[k : k^{\times2}\right] = 2$ and $A \in M_2(k)$. Define $S = \{\det( \lambda A ) \mid \lambda \in k^{\times} \}$.  \begin{align*}
+%        S =
+%        \begin{cases}
+%            \{0\}                     &\text{if } \det(A) = 0 \\
+%            k^{\times2}              &\text{if } \det(A) \in k^{\times2} \\
+%            k^{\times} - k^{\times2} &\text{if } \det(A) \in k^{\times} - k^{\times2}
+%        \end{cases}
+%    \end{align*}
 %    Moreover, for elements $B, C \in kA$ if $\det(B) = \det(C) \neq 0$ then $B = C$ or $B = -C$.
-\end{lemma}
-\begin{proof}
-    Let $A \in M_2(k)$. Then $\det(\lambda A) = \det(\lambda I)\det(A) = \lambda^2\det(A)$ where $\lambda \in k$.  If $\det(A) = 0$, then $\det(\lambda A) = 0$ for $\lambda \in k$ and $S = \{0\}$ follows. Otherwise, we know that the quotient group $k^{\times}/k^{\times2}$ has only the two cosets $k^{\times2}, k^{\times} - k^{\times2}$. So if $\det(A) \in k^{\times2}$, we have $S = \{\lambda^2 \det(A) \mid \lambda \in k^{\times}\} = k^{\times2}$ and similarly, if $\det(A) \in k^{\times} - k^{\times2}$, then $S = \{\lambda^2 \det(A) \mid \lambda \in k^{\times}\} = k^{\times} - k^{\times2}$.
-\end{proof}
+%\end{lemma}
+%\begin{proof}
+%    Let $A \in M_2(k)$. Then $\det(\lambda A) = \det(\lambda I)\det(A) = \lambda^2\det(A)$ where $\lambda \in k$.  If $\det(A) = 0$, then $\det(\lambda A) = 0$ for $\lambda \in k$ and $S = \{0\}$ follows. Otherwise, we know that the quotient group $k^{\times}/k^{\times2}$ has only the two cosets $k^{\times2}, k^{\times} - k^{\times2}$. So if $\det(A) \in k^{\times2}$, we have $S = \{\lambda^2 \det(A) \mid \lambda \in k^{\times}\} = k^{\times2}$ and similarly, if $\det(A) \in k^{\times} - k^{\times2}$, then $S = \{\lambda^2 \det(A) \mid \lambda \in k^{\times}\} = k^{\times} - k^{\times2}$.
+%\end{proof}
 
 \begin{lemma}\label{orbit-sizes}
     Consider the following elements of $M_2(\bF_q)$.
@@ -251,7 +253,7 @@ Now, $A_{a,b}(\bF_q) \cong M_2(\bF_q)$, so \cref{commutative-subalgebras} suffic
     \begin{equation*}
         [GL_2(\bF_q) : G_x] = \frac{(q^2-1)(q^2-q)}{(q-1)^2} = q(q + 1)
     \end{equation*}
-    By the orbit coset correspondence theorem~\cite{DandF} we have that $\mathcal{O}_x = q(q + 1)$
+    By the orbit coset correspondence theorem~\cite{DandF} we have that $|\mathcal{O}_x| = q(q + 1)$
 
     Similarly we have $G_y = \{A \in GL_2(\bF_q) | Ay = yA\}$ and the only possible elements of $G_y$ are those of the form $sy + tI$ for $s,t \in \bF_q$ where $sy+tI \in GL_2(\bF_q)$.
     \begin{equation*}
@@ -265,24 +267,51 @@ Now, $A_{a,b}(\bF_q) \cong M_2(\bF_q)$, so \cref{commutative-subalgebras} suffic
     \begin{equation*}
         [GL_2(\bF_q) : G_y] = \frac{(q^2-1)(q^2-q)}{q^2 - q} = q^2 - 1
     \end{equation*}
-    and we have $\mathcal{O}_y = q(q - 1)$
+    and we have $|\mathcal{O}_y| = q(q - 1)$
 \end{proof}
 
 \begin{theorem}
     \begin{align}
-        |[\bF_{q^2}]|                  &= \binom{q}{2} \\
-        |[\bF_q \times \bF_q]|         &= \binom{q + 1}{2} \\[0.5em]
-        |[{\bF_q^2}_{nil}]|            &= q + 1
+        |[K_{-1}]|      &= \binom{q}{2} \\
+        |[K_{1}]|       &= \binom{q + 1}{2} \\[0.5em]
+        |[K_{0}]|       &= q + 1
     \end{align}
 \end{theorem}
 \begin{proof}
     The elements $x, y$ from \cref{orbit-sizes} are the rational canonical forms for all matrices with minimum polynomials $X^2 - 1$ and $X^2$ respectively. Note that two matrices in $M_2(k)$ are conjugate if and only if they have the same rational canonical form~\cite{DandF}.
 
-Since $X^2 - 1 = (X + 1)(X - 1)$ in $M_2(\bF_q)$ and $\operatorname{char}(\bF_q) \neq 2$ {\color{blue} this must be included in the introductory sections}, all of the elements of $\mathcal{O}_x$ belong to an embedding of $\bF_q \times \bF_q$. Additionally any embedding of $\bF_q \times \bF_q$ must be of this form...
+    Since $X^2 - 1 = (X + 1)(X - 1)$ is reducible and not separable over $\bF_q$, and $\operatorname{char}(\bF_q) \neq 2$, all of the elements of $\mathcal{O}_x$ generate an embedding $K_{1}$.
 
-Now, referring to \cref{square-quotient-cosets} we know that each plane isomorphic to $\bF_q \times \bF_q$
+    Any embedding $K_{1}$ must also contain an element of $\mathcal{O}_x$. To see this, pick a nontrivial element $A \in K_{1}$ such that $A$ is orthogonal to the identity. Then $\operatorname{tr}(A) = 0$, and $m_A(X) = p_A(X) = X^2 + \det(A)$. We picked $A \in K_{1}$, which means that $m_A(X)$ must also be reducible and not separable. It follows that $\det(A) = -\lambda^2$ for some $\lambda \in \bF_q$. Let $B = A/\lambda \in K_{1}$ and observe $\operatorname{tr}(B) = \operatorname{tr}(A)/\lambda = 0$, $\det(B) = \det(A)/\lambda^2 = -\lambda^2/\lambda^2 = -1$. Therefore, $m_B(X) = p_B(X) = X^2 -\operatorname{tr}(B) X + \det(B) = X^2 -1$ as desired.
 
-By \cref{total-count}, ...
+    Furthermore, suppose $B' \in K_{1}$ has minimum polynomial $X^2 - 1$. Then $B'$ is orthogonal to the identity as well and $B' = \alpha B$ for some $\alpha \in \bF_q^{\times}$ due to $K_{1}$ being dimension $2$. We have $-1 = \det(B') = \alpha^2 \det(B) = -\alpha^2$, so $\alpha = \pm 1$ and $B' = \pm B$. We have therefore shown that each embedding $K_{1}$ contains exactly $2$ elements of $\mathcal{O}_x$. Applying \cref{orbit-sizes},
+    \begin{align*}
+        |[K_{1}]| = \frac{1}{2}|\mathcal{O}_x|
+                  = \frac{q(q+1)}{2}
+                  = \binom{q + 1}{2}
+    \end{align*}
+    Similarly, since $X^2$ is separable over $\bF_q$, all of the elements of $\mathcal{O}_y$ generate an embedding of $K_{0}$. Any embedding $K_{0}$ will always contain exactly $q - 1$ elements of $\mathcal{0}_y$. These are precisely the nontrivial elements of $K_{0}$ that are orthogonal to the identity. Applying \cref{orbit-sizes},
+    \begin{align*}
+        |[K_{0}]| = \frac{1}{q-1}|\mathcal{O}_x|
+                  = \frac{q^2-1}{q-1}
+                  = q+1
+    \end{align*}
+
+    It remains to show $|[K_{-1}]| = \binom{q}{2}$. We may use the previous counts and \cref{total-count} to do so.
+    \begin{align*}
+        |[K_{-1}]| &= q^2 + q + 1 - |[K_{1}]| - |[K_{0}]| \\
+                   &= q^2 + q + 1 - \binom{q+1}{2} - (q+1) \\
+                   &= q^2 - \frac{q(q+1)}{2} \\
+                   &= \frac{q(q-1)}{2} \\
+                   &= \binom{q}{2}
+    \end{align*}
+    This completes the proof.
+
+
+
+
+
+
 \end{proof}
 
 \begin{bibdiv}
