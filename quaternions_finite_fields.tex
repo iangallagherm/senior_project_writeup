@@ -32,8 +32,7 @@ problems involving the number of points of $\bP^n_q$, the Grassmannian,
 and further generalizations. % Might want citations here
 
 This paper is meant to address a similar problem. Namely, the structure and 
-count of the maximal commutative subalgebras of $M_2(\bF_q)$. Such
-subalgebras...
+count of the \textit{maximal commutative} subalgebras of $M_2(\bF_q)$, the vector space $\bF_q^4$ with matrix multiplication. Such commutative subalgebras are themselves two dimensional vector subspaces with the inherited multiplication of $M_2(\bF_q)$. We find that there are three isomorphism classes of maximal commutative subalgebras and give explicit formulas for the size of the isomorphism classes based on the size of $\bf_q$.
 
 For the duration of the paper, $q = p^n$ for some prime $p \neq 2$.
 
@@ -41,55 +40,51 @@ For the duration of the paper, $q = p^n$ for some prime $p \neq 2$.
 Here, we introduce an alternative formulation of $M_2(\bF_q)$ based on the generalized quaternions, an abstraction of the well-known quaternion algebra. This formulation lends itself nicely to a more general result detailing the structure of commutative subalgebras of $M_2(\bF_q)$.
 
 \begin{defn}[Generalized Quaternions]
-    Let $k$ be a field, $\operatorname{char} k \neq 2$, and fix $a,b \in k-\{0\}$. Then the \textit{generalized quaternions} are a central simple $k$-algebra (CSA) of the form 
+    Let $\bF$ be a field, $\operatorname{char} \bF \neq 2$, and fix $a,b \in \bF-\{0\}$. Then define the \textit{generalized quaternions} as
 \begin{gather*}
-    A_{a,b}(k) = \{t + xi + yj + zl : t,x,y,z \in k\} \\
-    \text{ where }i^2 =a, j^2 = b, \text{ and } ij = -ji=l
+    A_{a,b}(\bF) = \{t + xi + yj + zk : t,x,y,z \in \bF\} \\
+    \text{ where }i^2 =a, j^2 = b, \text{ and } ij = -ji=k
 \end{gather*}
 \end{defn}
 
+The generalized quaternions form what is known as a central simple algebra over $\bF$. That is, it is a finite diminsional \bF-algebra with center \bF and no nontrivial two-sided ideals.
+{\color{blue} possibly insert proof that the generalized quaternions are a csa here}
+
 \begin{defn}[Generalized Quaternion Norm]
 \begin{align*}
-    N_{a,b}:  A_{a,b}(k) & \rightarrow k  \\
+    N_{a,b}:  A_{a,b}(\bF) & \rightarrow \bF  \\
     q & \mapsto q \overline{q} = t^2 -ax^2 -by^2 +abz^2 
 \end{align*}
 \end{defn}
 
-It turns out that $M_2(\bF_q)$ is the only isomorphism class of generalized quaternions over $\bF_q$ but this fact is not immediately obvious. To prove this, we cite but do not prove the following results. 
+It turns out that $M_2(\bF_q)$ is the only isomorphism class of generalized quaternions over $\bF_q$ but this fact is not immediately obvious. We will use the following two results to prove this.
 
-\begin{theorem}[Wedderburn~\cite{Henderson65}]\label{wedderburn}
+\begin{theorem}[Wedderburn~\cite{DandF}*{pg. 854}]\label{wedderburn}
     Let $k$ be a field and $A$ a central simple algebra. Then $A \simeq M_n(D)$ for some $k$-division algebra $D$.
 \end{theorem}
 
-\begin{theorem}[Chevalley-Warning~\cite{Serre}]\label{c-warning}
+\begin{theorem}[Chevalley-Warning~\cite{Serre}*{pg. 5}]\label{c-warning}
     Let $f_{\alpha} \in \bF_q[X_1, \dots, X_n]$ be polynomials in $n$ variables such that $\sum_{\alpha} \deg f_{\alpha} < n$ and let $V$ be the set of their common zeros in $\bF_q^n$. One has 
     \begin{align*}
         | V | \equiv 0 \pmod{p}
     \end{align*}
 \end{theorem}
 
-With these theorems, we can now give a succint explanation for the structure of the generalized quaternions over $\bF_q$
-
-\begin{lemma}\label{norm-nontrivial-zero}
-    $N_{a,b}(X_1 + iX_2 + jX_3 + kX_4)$ has a nontrivial zero over $A_{a,b}(\bF_q)$.
-\end{lemma}
-\begin{proof}
-    For this, we make use of \cref{c-warning}. Let 
-    \begin{align*}
-        f_1 &= N_{a,b}(X_1 + iX_2 + jX_3 + kX_4) \\
-            &= X_1^2 -aX_2^2 -bX_3^2 + abX_4^2 \\
-            &\in \bF_q[X_1, X_2, X_3, X_4]
-    \end{align*}
-    Here, $\deg f_1 = 2 < 4$, so Chevalley-Warning holds and $|V| \equiv 0 \pmod{p}$. Note that $f(0,0,0,0) = 0$, so we must have $p$ divides $|V|$. Therefore, $f_1$ has a nontrivial zero and this completes the proof.
-\end{proof}
+With these theorems, we now give a proof of the structure of the generalized quaternions over $\bF_q$.
 
 \begin{theorem}
     $A_{a,b}(\bF_q) \cong M_2(\bF_q)$ 
 \end{theorem}
 \begin{proof}
-    By \cref{norm-nontrivial-zero}, there exists $q \in A_{a,b}(\bF_q)$, $q \neq 0$, such that $N_{a,b}(q) = q \overline{q} = 0$. In other words, $A_{a,b}(\bF_q)$ has nontrivial zero divisors and is therefore not a $\bF_q$-division algebra. By \cref{wedderburn} we must have $A_{a,b}(\bF_q) \cong M_n(D)$ for some $\bF_q$-division algebra $D$ and natural number $n$. However, $\dim_{\bF_q} A_{a,b}(\bF_q) = 4$, so $n=2$ and $D$ must have $\bF_q$-dimension 1.
+    We first make use of \Cref{c-warning}. Let
+    \begin{align*}
+        f &= N_{a,b}(X_1 + iX_2 + jX_3 + kX_4) \\
+            &= X_1^2 -aX_2^2 -bX_3^2 + abX_4^2 \\
+            &\in \bF_q[X_1, X_2, X_3, X_4]
+    \end{align*}
+    Here, $\deg f = 2 < 4$, so Chevalley-Warning holds and $|V| \equiv 0 \pmod{p}$, where $V$ is the set of zeros of $f$. Note that $f(0,0,0,0) = 0$, so we must have $p$ divides $|V|$. Therefore, $f$ has a nontrivial zero.
 
-    $\therefore D \cong \bF_q$ and $A_{a,b}(\bF_q) \cong M_2(\bF_q)$. 
+    It follows that there exists $q \in A_{a,b}(\bF_q)$, $q \neq 0$, such that $N_{a,b}(q) = q \overline{q} = 0$. Therefore, q is a nontrivial zero divisor and $A_{a,b}(\bF_q)$ is not a $\bF_q$-division algebra. By \Cref{wedderburn} we must have $A_{a,b}(\bF_q) \cong M_n(D)$ for some $\bF_q$-division algebra $D$ and natural number $n$. Since $A_{a,b}(\bF_q)$ is not a division algebra, we know $n\neq1$. $\dim_{\bF_q} A_{a,b}(\bF_q) = 4$, so $n$ must be $2$ and $D$ must have $\bF_q$-dimension 1, so is isomorphic to $\bF_q$.Therefore, $A_{a,b}(\bF_q) \cong M_2(\bF_q)$. 
 \end{proof}
 
 \section{Planes in $M_2(\bF_q)$}
@@ -165,10 +160,10 @@ To prove that there are no commutative subalgebras of dimension 3, we return to 
     If $K \subseteq A_{a,b}(k)$ is a commutative subalgebra, then $K = k[\mathbf{w}]$ for some pure imaginary $\mathbf{w} \in A_{a,b}(k)$, and $\dim_k K = 1$ or $2$.
 \end{theorem}
 \begin{proof}
-    If $q = (t, \mathbf{w}) \in K$, then $q-t = \mathbf{w}$ is in $k[q]$, hence $k[\mathbf{w}] = k[q] \subseteq K$. If $p = (s, \mathbf{v}) \in K$ then since $pq = qp$, $\mathbf{v}$ is a scalar multiple of $\mathbf{w}$ by \cref{anticommutativity}. Therefore $K = k[\mathbf{w}]$. Since $\deg(m_{\mathbf{w}}(X))$ is either $1$ or $2$, this completes the proof. 
+    If $q = (t, \mathbf{w}) \in K$, then $q-t = \mathbf{w}$ is in $k[q]$, hence $k[\mathbf{w}] = k[q] \subseteq K$. If $p = (s, \mathbf{v}) \in K$ then since $pq = qp$, $\mathbf{v}$ is a scalar multiple of $\mathbf{w}$ by \Cref{anticommutativity}. Therefore $K = k[\mathbf{w}]$. Since $\deg(m_{\mathbf{w}}(X))$ is either $1$ or $2$, this completes the proof. 
 \end{proof}
 
-Now, $A_{a,b}(\bF_q) \cong M_2(\bF_q)$, so \cref{commutative-subalgebras} suffices to show that no commutative subalgebra of dimension 3 exists and we may conclude that the three isomorphism classes of commutative planes are the maximal commutative subalgebras of $M_2(\bF_q)$
+Now, $A_{a,b}(\bF_q) \cong M_2(\bF_q)$, so \Cref{commutative-subalgebras} suffices to show that no commutative subalgebra of dimension 3 exists and we may conclude that the three isomorphism classes of commutative planes are the maximal commutative subalgebras of $M_2(\bF_q)$
 
 
 %To address this we state, but do not prove, a related result by Jacobson.
@@ -278,26 +273,26 @@ Now, $A_{a,b}(\bF_q) \cong M_2(\bF_q)$, so \cref{commutative-subalgebras} suffic
     \end{align}
 \end{theorem}
 \begin{proof}
-    The elements $x, y$ from \cref{orbit-sizes} are the rational canonical forms for all matrices with minimum polynomials $X^2 - 1$ and $X^2$ respectively. Note that two matrices in $M_2(k)$ are conjugate if and only if they have the same rational canonical form~\cite{DandF}.
+    The elements $x, y$ from \Cref{orbit-sizes} are the rational canonical forms for all matrices with minimum polynomials $X^2 - 1$ and $X^2$ respectively. Note that two matrices in $M_2(k)$ are conjugate if and only if they have the same rational canonical form~\cite{DandF}.
 
     Since $X^2 - 1 = (X + 1)(X - 1)$ is reducible and not separable over $\bF_q$, and $\operatorname{char}(\bF_q) \neq 2$, all of the elements of $\mathcal{O}_x$ generate an embedding $K_{1}$.
 
     Any embedding $K_{1}$ must also contain an element of $\mathcal{O}_x$. To see this, pick a nontrivial element $A \in K_{1}$ such that $A$ is orthogonal to the identity. Then $\operatorname{tr}(A) = 0$, and $m_A(X) = p_A(X) = X^2 + \det(A)$. We picked $A \in K_{1}$, which means that $m_A(X)$ must also be reducible and not separable. It follows that $\det(A) = -\lambda^2$ for some $\lambda \in \bF_q$. Let $B = A/\lambda \in K_{1}$ and observe $\operatorname{tr}(B) = \operatorname{tr}(A)/\lambda = 0$, $\det(B) = \det(A)/\lambda^2 = -\lambda^2/\lambda^2 = -1$. Therefore, $m_B(X) = p_B(X) = X^2 -\operatorname{tr}(B) X + \det(B) = X^2 -1$ as desired.
 
-    Furthermore, suppose $B' \in K_{1}$ has minimum polynomial $X^2 - 1$. Then $B'$ is orthogonal to the identity as well and $B' = \alpha B$ for some $\alpha \in \bF_q^{\times}$ due to $K_{1}$ being dimension $2$. We have $-1 = \det(B') = \alpha^2 \det(B) = -\alpha^2$, so $\alpha = \pm 1$ and $B' = \pm B$. We have therefore shown that each embedding $K_{1}$ contains exactly $2$ elements of $\mathcal{O}_x$. Applying \cref{orbit-sizes},
+    Furthermore, suppose $B' \in K_{1}$ has minimum polynomial $X^2 - 1$. Then $B'$ is orthogonal to the identity as well and $B' = \alpha B$ for some $\alpha \in \bF_q^{\times}$ due to $K_{1}$ being dimension $2$. We have $-1 = \det(B') = \alpha^2 \det(B) = -\alpha^2$, so $\alpha = \pm 1$ and $B' = \pm B$. We have therefore shown that each embedding $K_{1}$ contains exactly $2$ elements of $\mathcal{O}_x$. Applying \Cref{orbit-sizes},
     \begin{align*}
         |[K_{1}]| = \frac{1}{2}|\mathcal{O}_x|
                   = \frac{q(q+1)}{2}
                   = \binom{q + 1}{2}
     \end{align*}
-    Similarly, since $X^2$ is separable over $\bF_q$, all of the elements of $\mathcal{O}_y$ generate an embedding of $K_{0}$. Any embedding $K_{0}$ will always contain exactly $q - 1$ elements of $\mathcal{0}_y$. These are precisely the nontrivial elements of $K_{0}$ that are orthogonal to the identity. Applying \cref{orbit-sizes},
+    Similarly, since $X^2$ is separable over $\bF_q$, all of the elements of $\mathcal{O}_y$ generate an embedding of $K_{0}$. Any embedding $K_{0}$ will always contain exactly $q - 1$ elements of $\mathcal{0}_y$. These are precisely the nontrivial elements of $K_{0}$ that are orthogonal to the identity. Applying \Cref{orbit-sizes},
     \begin{align*}
         |[K_{0}]| = \frac{1}{q-1}|\mathcal{O}_x|
                   = \frac{q^2-1}{q-1}
                   = q+1
     \end{align*}
 
-    It remains to show $|[K_{-1}]| = \binom{q}{2}$. We may use the previous counts and \cref{total-count} to do so.
+    It remains to show $|[K_{-1}]| = \binom{q}{2}$. We may use the previous counts and \Cref{total-count} to do so.
     \begin{align*}
         |[K_{-1}]| &= q^2 + q + 1 - |[K_{1}]| - |[K_{0}]| \\
                    &= q^2 + q + 1 - \binom{q+1}{2} - (q+1) \\
