@@ -151,7 +151,7 @@ With these theorems, we now give a proof of the structure of the generalized qua
 
 \section{Identifying maximal commutative subalgebras}
 
-We have shown that each matrix $A \in M_2(\bF_q) - \bF_q$ generates a commutative subalgebra containing it, $\bF_q[A]$, and that this plane belongs to one of three given isomorphism classes.
+We have shown that each matrix $A \in M_2(\bF_q) - \bF_q$ generates a commutative plane containing it, $\bF_q[A]$, and that this plane belongs to one of three given isomorphism classes.
 Since there exists subalgebras of dimension three, such as the set of upper triangular matrices, it is reasonable to ask whether this is the maximal commutative subalgebra of $M_2(\bF_q)$ containing $A$.
 
 To prove that there are no commutative subalgebras of dimension 3, and that $\bF_q[A]$ is therefore maximal, we return to the generalized quaternions formulation. We first introduce a useful vector notation for the generalized quaternions.
@@ -198,14 +198,14 @@ To prove that there are no commutative subalgebras of dimension 3, and that $\bF
     Since $i, j, k$ are units in $M_2(\bF_q)$, they cannot be zero divisors, and we have that $\mathbf{v} \times_{a,b} \mathbf{w} = 0$ if and only if $\langle v_1, v_2, v_3 \rangle \times \langle w_1, w_2, w_3 \rangle = 0$, as desired. 
 \end{proof}
 
-\begin{theorem}\label{commutative-subalgebras}
-    If $K \subseteq A_{a,b}(\bF)$ is a nontrivial commutative subalgebra, then $K = \bF[\mathbf{w}]$ for some nonzero pure imaginary $\mathbf{w} \in A_{a,b}(\bF)$, and $\dim_{\bF} K = 2$.
+\begin{theorem}\label{commutative-planes}
+    If $K \subseteq A_{a,b}(\bF)$ is a commutative plane, then $K = \bF[\mathbf{w}]$ for some nonzero pure imaginary $\mathbf{w} \in A_{a,b}(\bF)$, and $\dim_{\bF} K = 2$.
 \end{theorem}
 \begin{proof}
     If $q = (t, \mathbf{w}) \in K - \bF$, then $q-t = \mathbf{w}$ is in $\bF[q]$, hence $\bF[\mathbf{w}] = \bF[q] \subseteq K$. If $p = (s, \mathbf{v}) \in K$ then since $pq = qp$, $\mathbf{v}$ is a scalar multiple of $\mathbf{w}$ by \Cref{anticommutativity}. Therefore, $K \subseteq \bF[\mathbf{w}]$. It follows that $K = \bF[\mathbf{w}]$. Finally, since $w \notin \bF$, we must have $m_{\mathbf{w}}(X) = p_{\mathbf{w}}(X)$, so $\deg(m_{\mathbf{w}}(X)) = 2$ and this completes the proof.
 \end{proof}
 
-Now, $A_{a,b}(\bF_q) \cong M_2(\bF_q)$, so \Cref{commutative-subalgebras} suffices to show that no commutative subalgebra of dimension 3 exists and we may conclude that the three isomorphism classes of commutative planes are the maximal commutative subalgebras of $M_2(\bF_q)$
+Now, $A_{a,b}(\bF_q) \cong M_2(\bF_q)$, so \Cref{commutative-planes} suffices to show that no commutative subalgebra of dimension 3 exists and we may conclude that the three isomorphism classes of commutative planes are the maximal commutative subalgebras of $M_2(\bF_q)$
 
 
 %To address this we state, but do not prove, a related result by Jacobson.
@@ -219,15 +219,15 @@ Now, $A_{a,b}(\bF_q) \cong M_2(\bF_q)$, so \Cref{commutative-subalgebras} suffic
 \section{Plane Counts}
 
 \begin{theorem}\label{total-count}
-    $M_2(\bF_q)$ has $q^2 + q + 1$ unique nontrival commutative subalgebras.
+    $M_2(\bF_q)$ has $q^2 + q + 1$ unique commutative planes.
 \end{theorem}
 
 \begin{proof}
-    By \Cref{commutative-subalgebras}, each commutative subalgebra is of the form $\bF_q[\mathbf{w}]$ for some pure imaginary $\mathbf{w} \in M_2(\bF_q)$, and is therefore uniquely determined by the line $\bF_q \mathbf{w}$ by \Cref{anticommutativity}. The number of maximal commutative subalgebras is then the same as the number of pure imaginary lines through the origin. Since there are $q^3 -1$ choices of pure imaginaries in $M_2(\bF_q)$ and $\mathbf{w}$ has $q-1$ nonzero scalar multiples in $\bF_q$, there must then be
+    By \Cref{commutative-planes}, each commutative plane is of the form $\bF_q[\mathbf{w}]$ for some pure imaginary $\mathbf{w} \in M_2(\bF_q)$, and is therefore uniquely determined by the line $\bF_q \mathbf{w}$ by \Cref{anticommutativity}. The number of commutative planes is then the same as the number of pure imaginary lines through the origin. Since there are $q^3 -1$ choices of pure imaginaries in $M_2(\bF_q)$ and $\mathbf{w}$ has $q-1$ nonzero scalar multiples in $\bF_q$, there must then be
     \begin{align*}
         \frac{q^3 - 1}{q - 1} = q^2 + q + 1
     \end{align*}
-    unique nontrivial commutative subalgebras in $M_2(\bF_q)$. 
+    unique commutative planes in $M_2(\bF_q)$. 
 %
     %Let $E_x$ for $x \in M_2(\bF_q) - \bF_q$ be the commutative subalgebra created by the span of $1$ and $x$.
     %Label $\Sigma = \{E_x \mid x \in M_2(\bF_q) - \bF_q \}$ and set $N = |\Sigma|$, the number of unique 2D commutative subalgebras. Let $x, y \in M_2(\bF_q) - \bF_q$. $E_x, E_y$ are both two dimensional $\bF_q$ algebras so we know that $E_x \cap E_y$ is also a $\bF_q$-algebra. By dimension arguments, either $E_x = E_y$ or $E_x \cap E_y = \bF_q$. Since $\bigcup_{E \in \Sigma}E = M_2(\bF_q)$, $\{E_x - \bF_q \mid x \in M_2(\bF_q) - \bF_q \}$ is a partition of $M_2(\bF_q) - \bF_q$. The following then holds,
@@ -270,12 +270,11 @@ Now, $A_{a,b}(\bF_q) \cong M_2(\bF_q)$, so \Cref{commutative-subalgebras} suffic
             1 & 0
         \end{pmatrix}
     \end{align*}
-    Under the conjugation action of $GL_2(\bF_q)$ on $M_2(\bF_q)$, 
+    Let $\mathcal{O}_x, \mathcal{O}_Y$ denote the orbits of $x, y$ under the conjugation action of $GL_2(\bF_q)$ on $M_2(\bF_q)$. Then
     \begin{align*}
         |\mathcal{O}_x| &= q(q + 1) \\
         |\mathcal{O}_y| &= (q + 1)(q - 1)
     \end{align*}
-    where $\mathcal{O}_x, \mathcal{O}_y$ denote the orbits of $x, y$ respectively.
 \end{lemma}
 \begin{proof}
     We may compute the size of the orbits of $x, y$ by first computing the size of their stabilizers, $G_x, G_y$, and then applying the Orbit-Coset Correspondence Theorem \cite{DandF}*{pg. 114}.
@@ -285,7 +284,7 @@ Now, $A_{a,b}(\bF_q) \cong M_2(\bF_q)$, so \Cref{commutative-subalgebras} suffic
             &= \{A \in GL_2(\bF_q) \mid AxA^{-1} = x\} \\
             &= \{A \in GL_2(\bF_q) \mid Ax = xA\} 
     \end{align*}
-    Since matrix multiplication is distributive, matrices of the form $sx + tI$ commute with $x$ for $s,t \in \bF_q$, so if $sx + tI \in GL_2(\bF_q)$, then $sx + tI \in G_x$. These are also the only possible matrices in $G_x$ since they are the elements of the maximal commutative subalgebra containing $x$ (\Cref{commutative-subalgebras}). It now suffices to determine when $\det(sx + tI) = 0$.
+    Since matrix multiplication is distributive, matrices of the form $sx + tI$ commute with $x$ for $s,t \in \bF_q$, so if $sx + tI \in GL_2(\bF_q)$, then $sx + tI \in G_x$. These are also the only possible matrices in $G_x$ since they are the elements of the maximal commutative subalgebra containing $x$ (\Cref{commutative-planes}). It now suffices to determine when $\det(sx + tI) = 0$.
     \begin{equation*}
         \det(sx+tI) =
         \begin{vmatrix}
@@ -297,7 +296,7 @@ Now, $A_{a,b}(\bF_q) \cong M_2(\bF_q)$, so \Cref{commutative-subalgebras} suffic
     \begin{equation*}
         [GL_2(\bF_q) : G_x] = \frac{(q^2-1)(q^2-q)}{(q-1)^2} = q(q + 1)
     \end{equation*}
-    where $[GL_2(\bF_q) : G_x]$ is the index of $G_x$ in $GL_2(\bF_q)$. By the orbit coset correspondence theorem~\cite{DandF} we have that $|\mathcal{O}_x| = q(q + 1)$.
+    where $[GL_2(\bF_q) : G_x]$ is the index of $G_x$ in $GL_2(\bF_q)$. By the Orbit-Coset Correspondence Theorem we have that $|\mathcal{O}_x| = q(q + 1)$.
 
     Similarly we have $G_y = \{A \in GL_2(\bF_q) | Ay = yA\}$ and the only possible elements of $G_y$ are those of the form $sy + tI$ for $s,t \in \bF_q$ where $sy+tI \in GL_2(\bF_q)$.
     \begin{equation*}
@@ -314,8 +313,33 @@ Now, $A_{a,b}(\bF_q) \cong M_2(\bF_q)$, so \Cref{commutative-subalgebras} suffic
     and we have $|\mathcal{O}_y| = q(q - 1)$
 \end{proof}
 
+\begin{theorem}
+    The orbits of the commutative planes in $M_2(\bF_q)$ under the conjugation action of $GL_2(\bF_q)$ are precisely the three isomorphism classes of planes.
+\end{theorem}
+\begin{proof}
+    Let $K, K'$ be commutative planes in $M_2(\bF_q)$ such that $K \cong K'$. That is, $K, K'$ are the same plane type. Let $A \in K$, $B \in K'$ be nonzero elements orthogonal to the identity. Then $K = \bF_q[A]$, $K' = \bF_q[B]$ and 
+    \begin{align*}
+        m_A(X) &= p_A(X) = X^2 + \alpha \\
+        m_B(X) &= p_B(X) = X^2 + \beta
+    \end{align*}
+    where $\alpha = \det(A)$, $\beta = \det(B)$. Furthermore, we must have that $\alpha \bF_q^{\times2} = \beta \bF_q^{\times2}$ since $K, K'$ belong to the same plane type. It follows that there exists $\delta \in \bF_q^{\times}$ such that $\alpha = \delta^2 \beta$. Let $C = \delta B$. Then $C$ is a nonzero element of $K'$ orthogonal to the identity with $\bF_q[C] = \bF_q[B] = K'$ and 
+    \begin{align*}
+        \det(C) = \det(\delta I)\det(B) = \delta^2 \beta = \alpha
+    \end{align*}
+    and we have that $m_A(X) = m_C(X) = X^2 + \alpha$. Therefore
+    \begin{align*}
+        \left(\begin{matrix}
+            0 & -\alpha \\
+            1 & 0
+        \end{matrix}\right)
+    \end{align*}
+    is the rational canonical form for both $A$ and $C$. Two matrices in $M_2(\bF)$ conjugate if and only if they have the same rational canoncial form~\cite{DandF}*{pg. 476}. Therefore $A$ and $C$ are conjugate, so the commutative planes $K = \bF_q[A]$ and $K' = \bF_q[C]$ are conjugate.
+    
+    We have thus shown that two commutative planes are conjugate if they are of the same isomorphism class. We also know that two conjugate commutative planes are isomorphic, so we may conclude that the orbits of the commutative planes of $M_2(\bF_q)$ under the conjugation action of $GL_2(\bF_q)$ are precisely the three isomorphism classes, as desired.
+\end{proof}
+
 \begin{theorem}\label{plane-counts}
-    The orbits of the commutative planes in $M_2(\bF_q)$ under the conjugation action of $GL_2(\bF_q)$ are as follows {\color{blue} Maybe should continue using the orbit notation?}
+    The size of the orbits of the commutative planes in $M_2(\bF_q)$ under the conjugation action of $GL_2(\bF_q)$ are as follows {\color{blue} Maybe should continue using the orbit notation?}
     \begin{align}
         |[\bF_{q^2}]|                   &= \binom{q}{2} \\
         |[\bF_q \times \bF_q]|          &= \binom{q + 1}{2} \\[0.5em]
@@ -323,13 +347,13 @@ Now, $A_{a,b}(\bF_q) \cong M_2(\bF_q)$, so \Cref{commutative-subalgebras} suffic
     \end{align}
 \end{theorem}
 \begin{proof}
-    The elements $x, y$ from \Cref{orbit-sizes} are the rational canonical forms for all matrices with minimal polynomials $X^2 - 1$ and $X^2$ respectively. Two matrices in $M_2(\bF)$ are conjugate if and only if they have the same rational canonical form~\cite{DandF}*{pg. 472}.
+    The elements $x, y$ from \Cref{orbit-sizes} are the rational canonical forms for all matrices with minimal polynomials $X^2 - 1$ and $X^2$ respectively. Note again that two matrices in $M_2(\bF)$ are conjugate if and only if they have the same rational canonical form.
 
-    Since $X^2 - 1 = (X + 1)(X - 1)$ is reducible and not separable over $\bF_q$, and $\operatorname{char}(\bF_q) \neq 2$, all of the elements of $\mathcal{O}_x$ generate a commutative subalgebra isomorphic to $\bF_q \times \bF_q$.
+    Since $X^2 - 1 = (X + 1)(X - 1)$ is reducible and not separable over $\bF_q$, and $\operatorname{char}(\bF_q) \neq 2$, all of the elements of $\mathcal{O}_x$ generate a commutative plane isomorphic to $\bF_q \times \bF_q$.
 
-    Any copy of $K \subseteq M_2(\bF_q)$ isomorphic to $\bF_q \times \bF_q$ must also contain an element of $\mathcal{O}_x$. To see this, pick a nontrivial element $A \in K$ such that $A$ is orthogonal to the identity {\color{blue} we call this pure imaginary with reference to generalized quaternions. Ok to use this terminology in this case?}. Then $\operatorname{tr}(A) = 0$, and $m_A(X) = p_A(X) = X^2 + \det(A)$. We picked $A \in K$, which means that $m_A(X)$ must also be reducible and not separable. It follows that $\det(A) = -\lambda^2$ for some $\lambda \in \bF_q$. Let $B = A/\lambda \in K$ and observe $\operatorname{tr}(B) = \operatorname{tr}(A)/\lambda = 0$, $\det(B) = \det(A)/\lambda^2 = -\lambda^2/\lambda^2 = -1$. Therefore, $m_B(X) = p_B(X) = X^2 -\operatorname{tr}(B) X + \det(B) = X^2 -1$ as desired.
+    Any copy of $K \subseteq M_2(\bF_q)$ isomorphic to $\bF_q \times \bF_q$ must also contain an element of $\mathcal{O}_x$. To see this, pick a nontrivial element $A \in K$ such that $A$ is orthogonal to the identity. Then $\operatorname{tr}(A) = 0$, and $m_A(X) = p_A(X) = X^2 + \det(A)$. We picked $A \in K$, which means that $m_A(X)$ must also be reducible and not separable. It follows that $\det(A) = -\lambda^2$ for some $\lambda \in \bF_q$. Let $B = A/\lambda \in K$ and observe $\operatorname{tr}(B) = \operatorname{tr}(A)/\lambda = 0$, $\det(B) = \det(A)/\lambda^2 = -\lambda^2/\lambda^2 = -1$. Therefore, $m_B(X) = p_B(X) = X^2 -\operatorname{tr}(B) X + \det(B) = X^2 -1$ as desired.
 
-    Furthermore, suppose $B' \in K$ has minimum polynomial $X^2 - 1$. Then $B'$ is orthogonal to the identity as well and $B' = \alpha B$ for some $\alpha \in \bF_q^{\times}$ due to $K$ being dimension $2$. We have $-1 = \det(B') = \alpha^2 \det(B) = -\alpha^2$, so $\alpha = \pm 1$ and $B' = \pm B$. We have therefore shown that each embedding $K$ contains exactly $2$ elements of $\mathcal{O}_x$. Applying \Cref{orbit-sizes},
+    Furthermore, suppose $B' \in K$ has minimum polynomial $X^2 - 1$. Then $B'$ is orthogonal to the identity as well and $B' = \alpha B$ for some $\alpha \in \bF_q^{\times}$ due to $K$ being dimension $2$. We have $-1 = \det(B') = \alpha^2 \det(B) = -\alpha^2$, so $\alpha = \pm 1$ and $B' = \pm B$. We have therefore shown that each possible choice of $K$ contains exactly $2$ elements of $\mathcal{O}_x$. Applying \Cref{orbit-sizes},
     {\color{blue} notational abuse here replacing K with $\bF_q \times \bF_q$}. 
     \begin{align*}
         |[\bF_q \times \bF_q]| = \frac{1}{2}|\mathcal{O}_x|
@@ -379,7 +403,6 @@ From \Cref{plane-counts} we can also find the limiting ratios of these commutati
             = 0
     \end{align*}
 \end{proof}
-
 
 
 \begin{bibdiv}
