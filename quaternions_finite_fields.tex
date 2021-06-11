@@ -49,7 +49,7 @@ Here, we introduce an alternative formulation of $M_2(\bF_q)$ based on the gener
 \end{gather*}
 \end{defn}
 
-The generalized quaternions form what is known as a central simple algebra over $\bF$. That is, it is a finite diminsional \bF-algebra with center \bF and no nontrivial two-sided ideals.
+The generalized quaternions form what is known as a central simple algebra over $\bF$. That is, it is a finite dimensional \bF-algebra with center \bF and no nontrivial two-sided ideals.
 {\color{blue} possibly insert proof that the generalized quaternions are a csa here}
 
 \begin{defn}[Generalized Quaternion Norm]
@@ -62,7 +62,7 @@ The generalized quaternions form what is known as a central simple algebra over 
 It turns out that $M_2(\bF_q)$ is the only isomorphism class of generalized quaternions over $\bF_q$ but this fact is not immediately obvious. We will use the following two results to prove this.
 
 \begin{theorem}[Wedderburn~\cite{DandF}*{pg. 854}]\label{wedderburn}
-    Let $k$ be a field and $A$ a central simple algebra. Then $A \simeq M_n(D)$ for some $k$-division algebra $D$.
+    Let $\bF$ be a field and $A$ a central simple algebra. Then $A \simeq M_n(D)$ for some $\bF$-division algebra $D$.
 \end{theorem}
 
 Refer to ~\cite{Henderson65} for a short proof of Wedderburn's Theorem.
@@ -153,7 +153,7 @@ To prove that there are no commutative subalgebras of dimension 3, and that $\bF
     \begin{align*}
         pq &= (st + v_1w_1a + v_2w_2b -abv_3w_3) + (sw_1 + tv_1 - v_2w_3b + v_3w_2b)i \\
            &\qquad + (sw_2 + tv_2 + v_1w_3a-v_3w_1a)j + (sw_3 + tv_3 + v_1w_2 - v_2w_1)k \\
-           &= (st + \mathbf{v} \cdot \mathbf{w}, s\mathbf{w} + t\mathbf{v} + \mathbf{v} \times \mathbf{w})
+           &= (st + \mathbf{v} \cdot_{a,b} \mathbf{w}, s\mathbf{w} + t\mathbf{v} + \mathbf{v} \times_{a,b} \mathbf{w})
     \end{align*}
 \end{defn}
 
@@ -161,7 +161,7 @@ To prove that there are no commutative subalgebras of dimension 3, and that $\bF
     Let $p = (0, \mathbf{v})$, and $q = (0, \mathbf{w})$. Then $pq = qp$ if and only if $\mathbf{v} \times_{a,b} \mathbf{w} = 0$ if and only if $\langle v_1, v_2, v_3 \rangle \times \langle w_1, w_2, w_3 \rangle = 0$.
 \end{lemma}
 \begin{proof}
-    We have $pq - qp = 2 \mathbf{v} \times \mathbf{w}$, and since $i, j, k$ are linearly independent and $\operatorname{char} k \neq 2$, $pq = qp$ if and only if $\mathbf{v} \times_{a,b} \mathbf{w} = 0$.
+    We have $pq - qp = 2 \mathbf{v} \times_{a,b} \mathbf{w}$, and since $i, j, k$ are linearly independent and $\operatorname{char} k \neq 2$, $pq = qp$ if and only if $\mathbf{v} \times_{a,b} \mathbf{w} = 0$.
 
     Additionally, setting $\langle t_1, t_2, t_3 \rangle = \langle v_1, v_2, v_3 \rangle \times \langle w_1, w_2, w_3 \rangle$, we observe $\mathbf{v} \times_{a,b} \mathbf{w} = \langle (-bi)t_1, (-aj) t_2, (k) t_3 \rangle$. Also, $i, j, k$ are all not roots of the norm polynomial and are therefore units. 
     \begin{align*}
