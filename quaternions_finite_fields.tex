@@ -49,15 +49,27 @@ Here, we introduce an alternative formulation of $M_2(\bF_q)$ based on the gener
 \end{gather*}
 \end{defn}
 
+Analogous to the complex numbers, for $q = t + xi + yj + zk$ we denote the quaternion conjugate $\overline{q} = t - xi - yj - zk$ and we will call the additive subspace 
+\begin{align*}
+    \{ xi + yj + zk : x, y, z \in \bF \} \subseteq A_{a,b}(\bF)
+\end{align*}
+the pure imaginary elements,
+
 The generalized quaternions form what is known as a central simple algebra over $\bF$. That is, it is a finite dimensional \bF-algebra with center \bF and no nontrivial two-sided ideals.
 {\color{blue} possibly insert proof that the generalized quaternions are a csa here}
 
 \begin{defn}[Generalized Quaternion Norm]
-\begin{align*}
-    N_{a,b}:  A_{a,b}(\bF) & \rightarrow \bF  \\
-    q & \mapsto q \overline{q} = t^2 -ax^2 -by^2 +abz^2 
-\end{align*}
+    We define the \textit{generalized quaternion norm} from $A_{a,b}(\bF)$ to \bF to be the function 
+    \begin{align*}
+        N_{a,b}:  A_{a,b}(\bF) & \rightarrow \bF  \\
+        q & \mapsto q \overline{q} = t^2 -ax^2 -by^2 +abz^2 
+    \end{align*}
 \end{defn}
+For $q, w \in A_{a,b}(\bF)$, it is not difficult to show that $\overline{qw} = \overline{w} \overline{q}$. From this we note that the norm is multiplicative
+\begin{align*}
+    N_{a,b}(qw) = qw\overline{qw} = qw\overline{w}\overline{q}= q\overline{q}w\overline{w} = N_{a,b}(q)N_{a,b}(w)
+\end{align*}
+where the third equality holds since $w\overline{w} \in \bF$ and therefore commutes with $\overline{q}$.
 
 It turns out that $M_2(\bF_q)$ is the only isomorphism class of generalized quaternions over $\bF_q$ but this fact is not immediately obvious. We will use the following two results to prove this.
 
@@ -91,7 +103,7 @@ With these theorems, we now give a proof of the structure of the generalized qua
     It follows that there exists $q \in A_{a,b}(\bF_q)$, $q \neq 0$, such that $N_{a,b}(q) = q \overline{q} = 0$. Therefore, q is a nontrivial zero divisor and $A_{a,b}(\bF_q)$ is not a $\bF_q$-division algebra. By \Cref{wedderburn} we must have $A_{a,b}(\bF_q) \cong M_n(D)$ for some $\bF_q$-division algebra $D$ and natural number $n$. Since $A_{a,b}(\bF_q)$ is not a division algebra, we know $n\neq1$. $A_{a,b}(\bF_q)$ has $\bF_q$-dimension $4$, so $n = 2$ and $D$ must have $\bF_q$-dimension 1, so is isomorphic to $\bF_q$.Therefore, $A_{a,b}(\bF_q) \cong M_2(\bF_q)$. 
 \end{proof}
 
-\section{Planes in $M_2(\bF_q)$}
+\section{Commutative Planes in $M_2(\bF_q)$}
     \begin{defn}
         For a matrix $A \in M_2(\bF_q)$, define
         \begin{enumerate}
@@ -102,25 +114,39 @@ With these theorems, we now give a proof of the structure of the generalized qua
 
     By the Cayley-Hamilton Theorem~\cite{DandF}*{pg. 478}, we know that $m_A(X)$ divides $p_A(X)$. So for nontrivial $A \in M_2(\bF_q)$, we observe that if $A \in \bF_q$, then $m_A(X) = X - A$. Otherwise, no minimal polynomial of degree $1$ exists, and we have $m_A(X) = p_A(X)$. 
 
-    Define the evaluation map $\varepsilon_A : \bF_q[X] \rightarrow M_2(\bF_q)$ taking $f(X)$ to $f(A)$, which is a $\bF_q$-algebra homomorphism with image $\bF_q[A] \subseteq M_2(\bF_q)$. The kernel is nontrivial, since $M_2(\bF_q)$ has finite $\bF_q$-dimension and $\bF_q[X]$ does not. Since $\bF_q[X]$ is a principal ideal domain, it follows that $ker(\varepsilon_A) = (m_A(X))$.{\color{blue} Include more about kernel being an ideal here?} By the First Isomorphism Theorem,
-    \begin{align*}
-        \frac{\bF_q[X]}{(m_A(X))} \cong \bF_q[A]
-    \end{align*}
+    \begin{theorem}
+        The set of two dimensional commutative subalgebras of $M_2(\bF_q)$ is composed of exactly three isomorphism classes based on $m_A(X)$.
+        \begin{enumerate}
+            \item If $m_A(X)$ is irreducible, define $\bF_q[A] \cong \bF_{q^2}$.
+            \item If $m_A(X)$ is reducible but not separable, define $\bF_q[A] \cong \bF_q \times \bF_q$.
+            \item If $m_A(X)$ is separable, define $\bF_q[A] \cong {\bF_q^2}_{nil}$.
+        \end{enumerate}
+    \end{theorem}
 
-    If $A \in M_2(\bF_q) - \bF_q$, we know $m_A(X) = p_A(X)$ is degree $2$ and $\bF_q[A]$ has $\bF_q$-dimension 2.
+    \begin{proof}
+        Define the evaluation map $\varepsilon_A : \bF_q[X] \rightarrow M_2(\bF_q)$ taking $f(X)$ to $f(A)$, which is a $\bF_q$-algebra homomorphism with image $\bF_q[A] \subseteq M_2(\bF_q)$. The kernel is nontrivial, since $M_2(\bF_q)$ has finite $\bF_q$-dimension and $\bF_q[X]$ does not. $m_A(A) = 0$ by definition so $m_A(X) \subseteq \ker(\varepsilon_A)$. Since $\bF_q[X]$ is a principal ideal domain, and the minimal polynomial is defined to be the smallest degree polynomial with $A$ as a root, $\ker(\varepsilon_A) = (m_A(X))$. By the First Isomorphism Theorem,
+        \begin{align*}
+            \frac{\bF_q[X]}{(m_A(X))} \cong \bF_q[A]
+        \end{align*}
 
-    $A$ then generates the two dimensional commutative subalgebra of $M_2(\bF_q)$ containing $A$. All possible 2 dimensional commutative subalgebras are therefore of the form
-    \begin{align*}
-        \frac{\bF_q[X]}{(m_A(X))}
-    \end{align*}
-    for some $A \in M_2(\bF_q) - \bF_q$. The set of two dimensional commutative subalgebras of $M_2(\bF_q)$ must then be composed of exactly three isomorphism classes based on $m_A(X)$
-    \begin{enumerate}
-        \item If $m_A(X)$ is irreducible, define $\bF_q[A] \cong \bF_{q^2}$.
-        \item If $m_A(X)$ is reducible but not separable, define $\bF_q[A] \cong \bF_q \times \bF_q$.
-        \item If $m_A(X)$ is separable, define $\bF_q[A] \cong {\bF_q^2}_{nil}$.
-    \end{enumerate}
+        If $A \in M_2(\bF_q) - \bF_q$, we know $m_A(X) = p_A(X)$ is degree $2$ and $\bF_q[A]$ has $\bF_q$-dimension $2$. $A$ then generates the $2$ dimensional commutative subalgebra of $M_2(\bF_q)$ containing $A$. Let K be an arbitrary $2$ dimensional subalgebra of $M_2(\bF_q)$. Then there exists $B \in K - \bF_q$ whose minimal polynomial is degree $2$ and we must have $K = \bF_q[B]$. All possible 2 dimensional commutative subalgebras are therefore of the form
+        \begin{align*}
+            \frac{\bF_q[X]}{(m_A(X))}
+        \end{align*}
+        for some $A \in M_2(\bF_q) - \bF_q$. The set of two dimensional commutative subalgebras of $M_2(\bF_q)$ must then be composed of exactly three isomorphism classes based on $m_A(X)$
+        \begin{enumerate}
+            \item If $m_A(X)$ is irreducible, define $\bF_q[A] \cong \bF_{q^2}$.
+            \item If $m_A(X)$ is reducible but not separable, define $\bF_q[A] \cong \bF_q \times \bF_q$.
+            \item If $m_A(X)$ is separable, define $\bF_q[A] \cong {\bF_q^2}_{nil}$.
+        \end{enumerate}
+    \end{proof}
+
     The commutative subalgebra generated when $m_A(X)$ is separable can be considered a degenerate case due to the presence of nontrivial nilpotent elements which square to $0$. Since $m_A(X)$ is separable and reducible, we have $m_A(X) = (X - x)^2$ for some $x \in \bF_q$. By the definition of the minimal polynomial, we must have that $(A - x) ^ 2 = 0$. $A$ is not an element of $\bF_q$, so $A - x$ is nonzero and is therefore a nontrivial nilpotent element.
     It is worth noting that the case that $m_A(X)$ is both separable and irreducible does not require consideration since finite fields are perfect.
+
+    \begin{defn}
+        We refer to the two dimensional commutative subalgebras of $M_2(\bF_q)$ as the \textit{commutative planes} of the matrix ring.
+    \end{defn}
     
 
 \section{Identifying maximal commutative subalgebras}
@@ -131,7 +157,7 @@ Since there exists subalgebras of dimension three, such as the set of upper tria
 To prove that there are no commutative subalgebras of dimension 3, and that $\bF_q[A]$ is therefore maximal, we return to the generalized quaternions formulation. We first introduce a useful vector notation for the generalized quaternions.
 
 \begin{defn}[Generalized Quaternions, Vector Notation]
-    Let $p = (s, \mathbf{v})$, and $q = (t, \mathbf{w})$, using the vector notation $\mathbf{v} = \langle v_1i, v_2j, v_3k \rangle$ and $\mathbf{w} = \langle w_1i, w_2j, w_3k \rangle$ with coefficients in $A_{a,b}(\bF)$. Modified dot and cross product formulas compute
+    Let $p, q \in A_{a,b}(\bF)$. Write $p = (s, \mathbf{v})$, and $q = (t, \mathbf{w})$, using the vector notation $\mathbf{v} = \langle v_1i, v_2j, v_3k \rangle$ and $\mathbf{w} = \langle w_1i, w_2j, w_3k \rangle$ with coefficients in $A_{a,b}(\bF)$. Modified dot and cross product formulas compute
     \begin{align*}
         \mathbf{v} \cdot_{a,b}  \mathbf{w} &= v_1w_1a + v_2w_2b -abv_3w_3 \\
         \mathbf{v} \times_{a,b} \mathbf{w} &=
