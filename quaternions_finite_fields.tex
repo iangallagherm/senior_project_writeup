@@ -32,7 +32,7 @@ problems involving the number of points of $\bP^n_q$, the Grassmannian,
 and further generalizations. % Might want citations here
 
 This paper is meant to address a similar problem. Namely, the structure and 
-count of the \textit{maximal commutative} subalgebras of $M_2(\bF_q)$, the vector space $\bF_q^4$ with matrix multiplication. Such commutative subalgebras are themselves two dimensional vector subspaces with the inherited multiplication of $M_2(\bF_q)$. We find that there are three isomorphism classes of maximal commutative subalgebras and give explicit formulas for the size of the isomorphism classes based on the size of $\bF_q$.
+count of the \textit{maximal commutative} subalgebras of $M_2(\bF_q)$, the vector space $\bF_q^4$ with matrix multiplication. Such commutative subalgebras are themselves $2$-dimensional vector subspaces with the inherited multiplication of $M_2(\bF_q)$. We find that there are three isomorphism classes of maximal commutative subalgebras and give explicit formulas for the size of the isomorphism classes based on the size of $\bF_q$.
 
 %We also relate the limiting ratio of these counts to similar ratios that can be computed for $M_2(\bR)$.
 
@@ -42,7 +42,7 @@ For the duration of the paper, $q = p^n$ for some prime $p \neq 2$.
 Here, we introduce an alternative formulation of $M_2(\bF_q)$ based on the generalized quaternions, an abstraction of the well-known quaternion algebra. This formulation lends itself nicely to a more general result detailing the structure of commutative subalgebras of $M_2(\bF_q)$.
 
 \begin{defn}[Generalized Quaternions]
-    Let $\bF$ be a field, $\operatorname{char} \bF \neq 2$, and fix $a,b \in \bF-\{0\}$. Then define the \textit{generalized quaternions} as
+    Let $\bF$ be a field, $\operatorname{char}(\bF) \neq 2$, and fix $a,b \in \bF-\{0\}$. Then define the \textit{generalized quaternions} as
 \begin{gather*}
     A_{a,b}(\bF) = \{t + xi + yj + zk : t,x,y,z \in \bF\} \\
     \text{ where }i^2 =a, j^2 = b, \text{ and } ij = -ji=k
@@ -123,7 +123,7 @@ With these theorems, we now give a proof of the structure of the generalized qua
     By the Cayley-Hamilton Theorem~\cite{DandF}*{pg. 478}, we know that $m_A(X)$ divides $p_A(X)$. So for nontrivial $A \in M_2(\bF_q)$, we observe that if $A \in \bF_q$, then $m_A(X) = X - A$. Otherwise, no minimal polynomial of degree $1$ exists, and we have $m_A(X) = p_A(X)$. 
 
     \begin{theorem}
-        The set of two dimensional commutative subalgebras of $M_2(\bF_q)$ is composed of exactly three isomorphism classes based on $m_A(X)$.
+        The set of $2$-dimensional commutative subalgebras of $M_2(\bF_q)$ is composed of exactly three isomorphism classes based on $m_A(X)$.
         \begin{enumerate}
             \item If $m_A(X)$ is irreducible, define $\bF_q[A] \cong \bF_{q^2}$.
             \item If $m_A(X)$ is reducible but not separable, define $\bF_q[A] \cong \bF_q \times \bF_q$.
@@ -137,11 +137,11 @@ With these theorems, we now give a proof of the structure of the generalized qua
             \frac{\bF_q[X]}{(m_A(X))} \cong \bF_q[A]
         \end{align*}
 
-        If $A \in M_2(\bF_q) - \bF_q$, we know $m_A(X) = p_A(X)$ is degree $2$ and $\bF_q[A]$ has $\bF_q$-dimension $2$. $A$ then generates the $2$ dimensional commutative subalgebra of $M_2(\bF_q)$ containing $A$. Let K be an arbitrary $2$ dimensional subalgebra of $M_2(\bF_q)$. Then there exists $B \in K - \bF_q$ whose minimal polynomial is degree $2$ and we must have $K = \bF_q[B]$. All possible 2 dimensional commutative subalgebras are therefore of the form
+        If $A \in M_2(\bF_q) - \bF_q$, we know $m_A(X) = p_A(X)$ is degree $2$ and $\bF_q[A]$ has $\bF_q$-dimension $2$. $A$ then generates the $2$-dimensional commutative subalgebra of $M_2(\bF_q)$ containing $A$. Let K be an arbitrary $2$-dimensional commutative subalgebra of $M_2(\bF_q)$. Then there exists $B \in K - \bF_q$ whose minimal polynomial is degree $2$ and we must have $K = \bF_q[B]$. All possible $2$-dimensional commutative subalgebras are therefore of the form
         \begin{align*}
             \frac{\bF_q[X]}{(m_A(X))}
         \end{align*}
-        for some $A \in M_2(\bF_q) - \bF_q$. The set of two dimensional commutative subalgebras of $M_2(\bF_q)$ must then be composed of exactly three isomorphism classes based on $m_A(X)$
+        for some $A \in M_2(\bF_q) - \bF_q$. The set of $2$-dimensional commutative subalgebras of $M_2(\bF_q)$ must then be composed of exactly three isomorphism classes based on $m_A(X)$
         \begin{enumerate}
             \item If $m_A(X)$ is irreducible, define $\bF_q[A] \cong \bF_{q^2}$.
             \item If $m_A(X)$ is reducible but not separable, define $\bF_q[A] \cong \bF_q \times \bF_q$.
@@ -153,14 +153,14 @@ With these theorems, we now give a proof of the structure of the generalized qua
     It is worth noting that the case that $m_A(X)$ is both separable and irreducible does not require consideration since finite fields are perfect.
 
     \begin{defn}
-        We refer to the two dimensional commutative subalgebras of $M_2(\bF_q)$ as the \textit{commutative planes} of the matrix ring.
+        We refer to the $2$-dimensional commutative subalgebras of $M_2(\bF_q)$ as the \textit{commutative planes} of the matrix ring.
     \end{defn}
     
 
 \section{Identifying maximal commutative subalgebras}
 
 We have shown that each matrix $A \in M_2(\bF_q) - \bF_q$ generates a commutative plane containing it, $\bF_q[A]$, and that this plane belongs to one of three given isomorphism classes.
-Since there exists subalgebras of dimension three, such as the set of upper triangular matrices, it is reasonable to ask whether this is the maximal commutative subalgebra of $M_2(\bF_q)$ containing $A$.
+Since there exists subalgebras of dimension 3, such as the set of upper triangular matrices, it is reasonable to ask whether this is the maximal commutative subalgebra of $M_2(\bF_q)$ containing $A$.
 
 To prove that there are no commutative subalgebras of dimension 3, and that $\bF_q[A]$ is therefore maximal, we return to the generalized quaternions formulation. We first introduce a useful vector notation for the generalized quaternions.
 
@@ -233,10 +233,11 @@ Leveraging the isomorphism between $A_{a,b}(\bF_q)$ and $M_2(\bF_q)$ proven in \
 
 \section{Plane Counts}
 
+At this point we are ready to prove more rigorous statements concerning the structure of the commutative planes in $M_2(\bF_q)$, including computing the size of each isomorphism class of commutative planes, and the orbits of the commutative planes under the conjugation action of $GL_2(\bF_q)$. This then gives us a discrete ratio of the three plane types, as well as a limiting ratio as $q \rightarrow \infty$. We begin with the total count of commutative planes in $M_2(\bF_q)$. 
+
 \begin{theorem}\label{total-count}
     $M_2(\bF_q)$ has $q^2 + q + 1$ unique commutative planes.
 \end{theorem}
-
 \begin{proof}
     By \Cref{commutative-planes}, each commutative plane is of the form $\bF_q[\mathbf{w}]$ for some pure imaginary $\mathbf{w} \in M_2(\bF_q)$, and is therefore uniquely determined by the line $\bF_q \mathbf{w}$ by \Cref{anticommutativity}. The number of commutative planes is then the same as the number of pure imaginary lines through the origin. Since there are $q^3 -1$ choices of pure imaginaries in $M_2(\bF_q)$ and $\mathbf{w}$ has $q-1$ nonzero scalar multiples in $\bF_q$, there must then be
     \begin{align*}
@@ -255,6 +256,7 @@ Leveraging the isomorphism between $A_{a,b}(\bF_q)$ and $M_2(\bF_q)$ proven in \
     %\end{align*}
 %    
     \end{proof} 
+    We must then have that the cardinality of the isomorphism classes of commutative planes sum to this total plane count of $q^2 + q + 1$. Before presenting formulas for the counts of the individual isomorphism classes, we first demonstrate an equivalence between the isomorphism classes of commutative planes and their orbits under conjugation.
 
 %    \begin{lemma}\label{square-quotient-cosets}
 %    Let k be a field such that $\left[k : k^{\times2}\right] = 2$ and $A \in M_2(k)$. Define $S = \{\det( \lambda A ) \mid \lambda \in k^{\times} \}$.  \begin{align*}
@@ -270,6 +272,33 @@ Leveraging the isomorphism between $A_{a,b}(\bF_q)$ and $M_2(\bF_q)$ proven in \
 %\begin{proof}
 %    Let $A \in M_2(k)$. Then $\det(\lambda A) = \det(\lambda I)\det(A) = \lambda^2\det(A)$ where $\lambda \in k$.  If $\det(A) = 0$, then $\det(\lambda A) = 0$ for $\lambda \in k$ and $S = \{0\}$ follows. Otherwise, we know that the quotient group $k^{\times}/k^{\times2}$ has only the two cosets $k^{\times2}, k^{\times} - k^{\times2}$. So if $\det(A) \in k^{\times2}$, we have $S = \{\lambda^2 \det(A) \mid \lambda \in k^{\times}\} = k^{\times2}$ and similarly, if $\det(A) \in k^{\times} - k^{\times2}$, then $S = \{\lambda^2 \det(A) \mid \lambda \in k^{\times}\} = k^{\times} - k^{\times2}$.
 %\end{proof}
+
+\begin{theorem}\label{plane-orbits}
+    The orbits of the commutative planes in $M_2(\bF_q)$ under the conjugation action of $GL_2(\bF_q)$ are precisely the three isomorphism classes of planes.
+\end{theorem}
+\begin{proof}
+    Let $K, K'$ be commutative planes in $M_2(\bF_q)$ such that $K \cong K'$. That is, $K, K'$ are the same plane type. Let $A \in K$, $B \in K'$ be nonzero elements orthogonal to the identity. Then $K = \bF_q[A]$, $K' = \bF_q[B]$ and 
+    \begin{align*}
+        m_A(X) &= p_A(X) = X^2 + \alpha \\
+        m_B(X) &= p_B(X) = X^2 + \beta
+    \end{align*}
+    where $\alpha = \det(A)$, $\beta = \det(B)$. Furthermore, we must have that $\alpha \bF_q^{\times2} = \beta \bF_q^{\times2}$ since $K, K'$ belong to the same plane type. It follows that there exists $\delta \in \bF_q^{\times}$ such that $\alpha = \delta^2 \beta$. Let $C = \delta B$. Then $C$ is a nonzero element of $K'$ orthogonal to the identity with $\bF_q[C] = \bF_q[B] = K'$ and 
+    \begin{align*}
+        \det(C) = \det(\delta I)\det(B) = \delta^2 \beta = \alpha
+    \end{align*}
+    and we have that $m_A(X) = m_C(X) = X^2 + \alpha$. Therefore
+    \begin{align*}
+        \left(\begin{matrix}
+            0 & -\alpha \\
+            1 & 0
+        \end{matrix}\right)
+    \end{align*}
+    is the rational canonical form for both $A$ and $C$. Two matrices in $M_2(\bF)$ conjugate if and only if they have the same rational canoncial form~\cite{DandF}*{pg. 476}. Therefore $A$ and $C$ are conjugate, so the commutative planes $K = \bF_q[A]$ and $K' = \bF_q[C]$ are conjugate.
+    
+    We have thus shown that two commutative planes are conjugate if they are of the same isomorphism class. We also know that two conjugate commutative planes are isomorphic, so we may conclude that the orbits of the commutative planes of $M_2(\bF_q)$ under the conjugation action of $GL_2(\bF_q)$ are precisely the three isomorphism classes, as desired.
+\end{proof}
+
+To compute the individual count of the orbits of each commutative plane, we first must compute the size of the orbits of some distinguished elements of $M_2(\bF_q)$.
 
 \begin{lemma}\label{orbit-sizes}
     Consider the following elements of $M_2(\bF_q)$.
@@ -328,30 +357,7 @@ Leveraging the isomorphism between $A_{a,b}(\bF_q)$ and $M_2(\bF_q)$ proven in \
     and we have $|\mathcal{O}_y| = q(q - 1)$
 \end{proof}
 
-\begin{theorem}
-    The orbits of the commutative planes in $M_2(\bF_q)$ under the conjugation action of $GL_2(\bF_q)$ are precisely the three isomorphism classes of planes.
-\end{theorem}
-\begin{proof}
-    Let $K, K'$ be commutative planes in $M_2(\bF_q)$ such that $K \cong K'$. That is, $K, K'$ are the same plane type. Let $A \in K$, $B \in K'$ be nonzero elements orthogonal to the identity. Then $K = \bF_q[A]$, $K' = \bF_q[B]$ and 
-    \begin{align*}
-        m_A(X) &= p_A(X) = X^2 + \alpha \\
-        m_B(X) &= p_B(X) = X^2 + \beta
-    \end{align*}
-    where $\alpha = \det(A)$, $\beta = \det(B)$. Furthermore, we must have that $\alpha \bF_q^{\times2} = \beta \bF_q^{\times2}$ since $K, K'$ belong to the same plane type. It follows that there exists $\delta \in \bF_q^{\times}$ such that $\alpha = \delta^2 \beta$. Let $C = \delta B$. Then $C$ is a nonzero element of $K'$ orthogonal to the identity with $\bF_q[C] = \bF_q[B] = K'$ and 
-    \begin{align*}
-        \det(C) = \det(\delta I)\det(B) = \delta^2 \beta = \alpha
-    \end{align*}
-    and we have that $m_A(X) = m_C(X) = X^2 + \alpha$. Therefore
-    \begin{align*}
-        \left(\begin{matrix}
-            0 & -\alpha \\
-            1 & 0
-        \end{matrix}\right)
-    \end{align*}
-    is the rational canonical form for both $A$ and $C$. Two matrices in $M_2(\bF)$ conjugate if and only if they have the same rational canoncial form~\cite{DandF}*{pg. 476}. Therefore $A$ and $C$ are conjugate, so the commutative planes $K = \bF_q[A]$ and $K' = \bF_q[C]$ are conjugate.
-    
-    We have thus shown that two commutative planes are conjugate if they are of the same isomorphism class. We also know that two conjugate commutative planes are isomorphic, so we may conclude that the orbits of the commutative planes of $M_2(\bF_q)$ under the conjugation action of $GL_2(\bF_q)$ are precisely the three isomorphism classes, as desired.
-\end{proof}
+Finally, we are ready to prove the following formulas for the counts of each type of commutative plane in $M_2(\bF_q)$. Note that the sum of the three commutative plane counts is $q^2 + q + 1$ as desired.
 
 \begin{theorem}\label{plane-counts}
     The size of the orbits of the commutative planes in $M_2(\bF_q)$ under the conjugation action of $GL_2(\bF_q)$ are as follows {\color{blue} Maybe should continue using the orbit notation?}
@@ -392,7 +398,7 @@ Leveraging the isomorphism between $A_{a,b}(\bF_q)$ and $M_2(\bF_q)$ proven in \
     \end{align*}
     This completes the proof.
 \end{proof}
-From \Cref{plane-counts} we can also find the limiting ratios of these commutative planes
+From \Cref{plane-counts} we can also find the limiting ratios of these commutative planes as $q$ gets larger. This ratio is of interest partially due to its relationship to the ratio of the three commutative planes in $M_2(\bR)$, although we will not discuss this here.
 \begin{cor}
     As $q \rightarrow \infty$, the ratio of commutative subalgebras of $M_2(\bF_q)$
     \begin{align*}
@@ -418,6 +424,9 @@ From \Cref{plane-counts} we can also find the limiting ratios of these commutati
             = 0
     \end{align*}
 \end{proof}
+
+\section{Further Work}
+There are a variety of different directions of inquiry from which the present results can be taken. Of particular interest to the author is the aforementioned relationship to the structure and ratio of commutative planes in $M_2(\bR)$, as well as similar explorations of the structure of maximal commutative subalgebras in the $p$-adics $\bQ_p$ for primes $p \neq 2$.
 
 
 \begin{bibdiv}
