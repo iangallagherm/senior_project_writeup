@@ -55,8 +55,16 @@ Analogous to the complex numbers, for $q = t + xi + yj + zk$ we denote the quate
 \end{align*}
 the pure imaginary elements,
 
-The generalized quaternions form what is known as a central simple algebra over $\bF$. That is, it is a finite dimensional \bF-algebra with center \bF and no nontrivial two-sided ideals.
-{\color{blue} possibly insert proof that the generalized quaternions are a csa here}
+\begin{theorem}
+    $A_{a,b}(\bF)$ is a central simple algebra over $\bF$. That is, it is a finite dimensional \bF-algebra with center \bF and no nonzero proper two-sided ideals.
+\end{theorem}
+\begin{proof}
+    Denote $A = A_{a,b}(\bF)$. If $q = t + xi + yj + zk$, then it is easy to show $iqi = a(t + xi -yj -zk)$, $jqj = b(t - xi + yj -zk)$, $kqk = -ab(t-xi-yj + zk)$. We then have:
+    \begin{enumerate}
+        \item The center of $A$ is \bF: Using $i^2 = a$, $j^2 = b$, and $k^2 = -ab$, it follows that $q$ commutes with $i, j, k$ if and only if $q = t \in \bF$.
+        \item A has no nonzero proper two-sided ideals: It suffices to show that $AqA = A$ for any nonzero $q = t + xi + yj + zk$. Since $AqA$ contains $iqi$, $jqj$, and $kqk$, it contains every linear combination of them, and since $2$, $a$, and $b$ are invertible in \bF, we can use this to show $t \in AqA$. If t is nonzero, then it is a $2$-sided unit, and since any ideal containing a $2$-sided unit is all of $A$, we are done. If $t = 0$ then it follows quickly that $x, y, z$ are all in $AqA$ and since $q$ is nonzero, one of them is a $2$-sided unit, so $AqA = A$. Therefore, in every case, $AqA = A$, so $A$ has no nonzero proper $2$-sided ideals.
+    \end{enumerate}
+\end{proof}
 
 \begin{defn}[Generalized Quaternion Norm]
     We define the \textit{generalized quaternion norm} from $A_{a,b}(\bF)$ to \bF to be the function 
@@ -88,7 +96,7 @@ Refer to ~\cite{Henderson65} for a short proof of Wedderburn's Theorem.
 
 With these theorems, we now give a proof of the structure of the generalized quaternions over $\bF_q$.
 
-\begin{theorem}
+\begin{theorem}\label{gen-quat-finite}
     $A_{a,b}(\bF_q) \cong M_2(\bF_q)$ 
 \end{theorem}
 \begin{proof}
@@ -199,13 +207,20 @@ To prove that there are no commutative subalgebras of dimension 3, and that $\bF
 \end{proof}
 
 \begin{theorem}\label{commutative-planes}
-    If $K \subseteq A_{a,b}(\bF)$ is a commutative plane, then $K = \bF[\mathbf{w}]$ for some nonzero pure imaginary $\mathbf{w} \in A_{a,b}(\bF)$, and $\dim_{\bF} K = 2$.
+    If $K \subseteq A_{a,b}(\bF)$ is a nontrivial commutative subalgebra, then $K = \bF[\mathbf{w}]$ for some nonzero pure imaginary $\mathbf{w} \in A_{a,b}(\bF)$, and $K$ has $\bF$-dimension $2$.
 \end{theorem}
 \begin{proof}
     If $q = (t, \mathbf{w}) \in K - \bF$, then $q-t = \mathbf{w}$ is in $\bF[q]$, hence $\bF[\mathbf{w}] = \bF[q] \subseteq K$. If $p = (s, \mathbf{v}) \in K$ then since $pq = qp$, $\mathbf{v}$ is a scalar multiple of $\mathbf{w}$ by \Cref{anticommutativity}. Therefore, $K \subseteq \bF[\mathbf{w}]$. It follows that $K = \bF[\mathbf{w}]$. Finally, since $w \notin \bF$, we must have $m_{\mathbf{w}}(X) = p_{\mathbf{w}}(X)$, so $\deg(m_{\mathbf{w}}(X)) = 2$ and this completes the proof.
 \end{proof}
 
-Now, $A_{a,b}(\bF_q) \cong M_2(\bF_q)$, so \Cref{commutative-planes} suffices to show that no commutative subalgebra of dimension 3 exists and we may conclude that the three isomorphism classes of commutative planes are the maximal commutative subalgebras of $M_2(\bF_q)$
+Leveraging the isomorphism between $A_{a,b}(\bF_q)$ and $M_2(\bF_q)$ proven in \Cref{gen-quat-finite}, we may now fully characterize the structure of maximal commutative subalgebras in $M_2(\bF_q)$.
+
+\begin{cor}
+    The three isomorphism classes of commutative planes are the maximal commutative subalgebras of $M_2(\bF_q)$.
+\end{cor}
+\begin{proof}
+    $A_{a,b}(\bF_q) \cong M_2(\bF_q)$, so \Cref{commutative-planes} suffices to show that no commutative subalgebra of dimension 3 exists. Therefore, the commutative planes are the maximal commutative subalgebras of $M_2(\bF_q)$ as desired.
+\end{proof}
 
 
 %To address this we state, but do not prove, a related result by Jacobson.
@@ -387,7 +402,7 @@ From \Cref{plane-counts} we can also find the limiting ratios of these commutati
 \end{cor}
 
 \begin{proof}
-    It suffices to show that the limit of $|[\bF_{q^2}]| / |[\bF_q \times \bF_q]|$ approaches $1$ and that the limit of  $|[{\bF_q^2}_{nil}]| / |[\bF_q \times \bF_q]|$ approaches $0$. {\color{blue} cite something here?}
+    It suffices to show that the limit of $|[\bF_{q^2}]| / |[\bF_q \times \bF_q]|$ approaches $1$ and that the limit of  $|[{\bF_q^2}_{nil}]| / |[\bF_q \times \bF_q]|$ approaches $0$.
     \begin{align*}
         \lim\limits_{q \rightarrow \infty} \frac{|[\bF_{q^2}]|}{|[\bF_q \times \bF_q]|}
             = \lim\limits_{q \rightarrow \infty} \frac{\binom{q}{2}}{\binom{q+1}{2}}
