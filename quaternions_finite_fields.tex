@@ -119,54 +119,61 @@ With these theorems, we now give a proof of the structure of the generalized qua
     \begin{defn}
         For a matrix $A \in M_2(\bF_q)$, define
         \begin{enumerate}
-            \item $A$'s characteristic polynomial $p_A(X) = X^2 -\operatorname{tr}(A)X + \det(A)$.
-            \item $A$'s minimal polynomial $m_A(X)$ is the unique monic polynomial of smallest degree such that $m_A(A) = 0$.
+            \item $A$'s {\it characteristic polynomial} $p_A(X) = X^2 -\operatorname{tr}(A)X + \det(A)$.
+            \item $A$'s {\it minimal polynomial} $m_A(X)$ is the unique monic polynomial of smallest degree such that $m_A(A) = 0$.
         \end{enumerate}
     \end{defn}
 
-    By the Cayley-Hamilton Theorem~\cite{DandF}*{pg. 478}, we know that $m_A(X)$ divides $p_A(X)$. So for nontrivial $A \in M_2(\bF_q)$, we observe that if $A \in \bF_q$, then $m_A(X) = X - A$. Otherwise, no minimal polynomial of degree $1$ exists, and we have $m_A(X) = p_A(X)$. 
+    By the Cayley-Hamilton Theorem~\cite{DandF}*{pg. 478}, we know that $m_A(X)$ divides $p_A(X)$. If $A \in \bF_q\cdot I\subset M_2(\bF_q)$, then clearly $m_A(X) = X - A$. If $A \in M_2(\bF_q)-\bF_q\cdot I$ then $m_A(X)$ does not have degree 1, and thus $m_A(X) = p_A(X)$  by Cayley-Hamilton. 
+    
+    \begin{defn}
+        A {\it commutative plane of $M_2(\bF_q)$} is a $2$-dimensional commutative subalgebra of $M_2(\bF_q)$.
+    \end{defn}
 
     \begin{theorem}
-        The set of $2$-dimensional commutative subalgebras of $M_2(\bF_q)$ is composed of exactly three isomorphism classes based on $m_A(X)$.
+        Every commutative plane of $M_2(\bF_q)$ has the form $\bF_q[A]$ for some $A \in M_2(\bF_q)$, and belongs to one of three isomorphism classes, depending on $m_A(X)$ as follows.
         \begin{enumerate}
-            \item If $m_A(X)$ is irreducible, define $\bF_q[A] \cong \bF_{q^2}$.
-            \item If $m_A(X)$ is reducible but not separable, define $\bF_q[A] \cong \bF_q \times \bF_q$.
-            \item If $m_A(X)$ is separable, define $\bF_q[A] \cong {\bF_q^2}_{nil}$.
+            \item If $m_A(X)$ is irreducible, $\bF_q[A] \cong \bF_{q^2}$.
+            \item If $m_A(X)$ is reducible but separable, $\bF_q[A] \cong \bF_q \times \bF_q$.
+            \item If $m_A(X)$ is reducible but inseparable, $\bF_q[A] \cong {\bF_q^2}_{nil}$.
         \end{enumerate}
     \end{theorem}
 
     \begin{proof}
-        Define the evaluation map $\varepsilon_A : \bF_q[X] \rightarrow M_2(\bF_q)$ taking $f(X)$ to $f(A)$, which is a $\bF_q$-algebra homomorphism with image $\bF_q[A] \subseteq M_2(\bF_q)$. The kernel is nontrivial, since $M_2(\bF_q)$ has finite $\bF_q$-dimension and $\bF_q[X]$ does not. $m_A(A) = 0$ by definition so $m_A(X) \subseteq \ker(\varepsilon_A)$. Since $\bF_q[X]$ is a principal ideal domain, and the minimal polynomial is defined to be the smallest degree polynomial with $A$ as a root, $\ker(\varepsilon_A) = (m_A(X))$. By the First Isomorphism Theorem,
+        Let $K$ be a commutative plane of $M_2(\bF_q)$. Then there exists $A \in K - \bF_q$. Define the {\it evaluation map} $\varepsilon_A : \bF_q[X] \rightarrow M_2(\bF_q)$ taking $f(X)$ to $f(A)$, which is a $\bF_q$-algebra homomorphism with image $\bF_q[A] \subseteq M_2(\bF_q)$. The kernel is nontrivial, since $M_2(\bF_q)$ has finite $\bF_q$-dimension and $\bF_q[X]$ does not. As $m_A(A) = 0$ by definition, $m_A(X) \subseteq \ker(\varepsilon_A)$. Since $\bF_q[X]$ is a principal ideal domain, and the minimal polynomial is defined to be the smallest degree polynomial with $A$ as a root, $\ker(\varepsilon_A) = (m_A(X))$. By the First Isomorphism Theorem,
         \begin{align*}
             \frac{\bF_q[X]}{(m_A(X))} \cong \bF_q[A]
         \end{align*}
-
-        If $A \in M_2(\bF_q) - \bF_q$, we know $m_A(X) = p_A(X)$ is degree $2$ and $\bF_q[A]$ has $\bF_q$-dimension $2$. $A$ then generates the $2$-dimensional commutative subalgebra of $M_2(\bF_q)$ containing $A$. Let K be an arbitrary $2$-dimensional commutative subalgebra of $M_2(\bF_q)$. Then there exists $B \in K - \bF_q$ whose minimal polynomial is degree $2$ and we must have $K = \bF_q[B]$. All possible $2$-dimensional commutative subalgebras are therefore of the form
+        Since $A \in M_2(\bF_q) - \bF_q$, we know $m_A(X) = p_A(X)$ is degree $2$ and $\bF_q[A]$ has $\bF_q$-dimension $2$, hence $K=\bF_q[A]$. We conclude that all possible commutative planes are of the form
         \begin{align*}
             \frac{\bF_q[X]}{(m_A(X))}
         \end{align*}
-        for some $A \in M_2(\bF_q) - \bF_q$. The set of $2$-dimensional commutative subalgebras of $M_2(\bF_q)$ must then be composed of exactly three isomorphism classes based on $m_A(X)$
+        for some $A \in M_2(\bF_q) - \bF_q$. Now the following is an easy exercise.
         \begin{enumerate}
-            \item If $m_A(X)$ is irreducible, define $\bF_q[A] \cong \bF_{q^2}$.
-            \item If $m_A(X)$ is reducible but not separable, define $\bF_q[A] \cong \bF_q \times \bF_q$.
-            \item If $m_A(X)$ is separable, define $\bF_q[A] \cong {\bF_q^2}_{nil}$.
+            \item If $m_A(X)$ is irreducible, $\bF_q[A] \cong \bF_{q^2}$.
+            \item If $m_A(X)$ is reducible but separable, $\bF_q[A] \cong \bF_q \times \bF_q$.
+            \item If $m_A(X)$ is reducible but inseparable, $\bF_q[A] \cong {\bF_q^2}_{nil}$.
         \end{enumerate}
+        Thus the set of commutative planes of $M_2(\bF_q)$ forms exactly three isomorphism classes based on $m_A(X)$, as stated.
     \end{proof}
 
-    The commutative subalgebra generated when $m_A(X)$ is separable can be considered a degenerate case due to the presence of nontrivial nilpotent elements which square to $0$. Since $m_A(X)$ is separable and reducible, we have $m_A(X) = (X - x)^2$ for some $x \in \bF_q$. By the definition of the minimal polynomial, we must have that $(A - x) ^ 2 = 0$. $A$ is not an element of $\bF_q$, so $A - x$ is nonzero and is therefore a nontrivial nilpotent element.
-    It is worth noting that the case that $m_A(X)$ is both separable and irreducible does not require consideration since finite fields are perfect.
+    The commutative subalgebras generated when $m_A(X)$ is reducible can each be considered degenerate cases. 
+    
+    When $m_A(X)$ is separable, we have the presence of nontrivial zero divisors. Since $m_A(X)$ is separable and reducible, we have $m_A(X) = (X - x)(X - y)$ for some $x,y \in \bF_q$, $x \neq y$. By the definition of the minimum polynomial, we must have that $(A - x)(A - y) = 0$. $A$ is not an element of $\bF_q$, so $(A - x), (A - y)$ are nonzero and are therefore nontrivial zero divisors.
+    
+    When $m_A(X)$ is inseparable, we have the presence of nontrivial nilpotent elements which square to $0$. Since $m_A(X)$ is inseparable and reducible, we have $m_A(X) = (X - x)^2$ for some $x \in \bF_q$. By the definition of the minimal polynomial, we must have that $(A - x) ^ 2 = 0$. $A$ is not an element of $\bF_q$, so $A - x$ is nonzero and is therefore a nontrivial nilpotent element.
+    
+    It is worth noting that the case that $m_A(X)$ is both inseparable and irreducible does not require consideration since finite fields are perfect.
 
-    \begin{defn}
-        We refer to the $2$-dimensional commutative subalgebras of $M_2(\bF_q)$ as the \textit{commutative planes} of the matrix ring.
-    \end{defn}
+    
     
 
 \section{Identifying maximal commutative subalgebras}
 
-We have shown that each matrix $A \in M_2(\bF_q) - \bF_q$ generates a commutative plane containing it, $\bF_q[A]$, and that this plane belongs to one of three given isomorphism classes.
-Since there exists subalgebras of dimension 3, such as the set of upper triangular matrices, it is reasonable to ask whether this is the maximal commutative subalgebra of $M_2(\bF_q)$ containing $A$.
+We have shown that each matrix $A \in M_2(\bF_q) - \bF_q$ generates a commutative plane $\bF_q[A]$, and that this plane belongs to one of three isomorphism classes.
+Since there exist subalgebras of dimension 3, such as the set of upper triangular matrices, it is reasonable to ask whether this is the maximal commutative subalgebra of $M_2(\bF_q)$ containing $A$.
 
-To prove that there are no commutative subalgebras of dimension 3, and that $\bF_q[A]$ is therefore maximal, we return to the generalized quaternions formulation. We first introduce a useful vector notation for the generalized quaternions.
+We will show the answer is no: there are no commutative subalgebras of dimension 3, and each commutative plane $\bF_q[A]$ is therefore maximal. To prove it, we return to the generalized quaternions formulation. We first introduce a useful vector notation for the generalized quaternions.
 
 \begin{defn}[Generalized Quaternions, Vector Notation]
     Let $p, q \in A_{a,b}(\bF)$. Write $p = (s, \mathbf{v})$, and $q = (t, \mathbf{w})$, using the vector notation $\mathbf{v} = \langle v_1i, v_2j, v_3k \rangle$ and $\mathbf{w} = \langle w_1i, w_2j, w_3k \rangle$ with coefficients in $A_{a,b}(\bF)$. Modified dot and cross product formulas compute
@@ -307,58 +314,58 @@ To compute the individual count of the orbits of each commutative plane, we firs
 \begin{lemma}\label{orbit-sizes}
     Consider the following elements of $M_2(\bF_q)$.
     \begin{align*}
-        x &= 
+        P &= 
         \begin{pmatrix}
             0 & 1 \\
             1 & 0
         \end{pmatrix} \\
-        y &=
+        Q &=
         \begin{pmatrix}
             0 & 0 \\
             1 & 0
         \end{pmatrix}
     \end{align*}
-    Let $\mathcal{O}_x, \mathcal{O}_Y$ denote the orbits of $x, y$ under the conjugation action of $GL_2(\bF_q)$ on $M_2(\bF_q)$. Then
+    Let $\mathcal{O}_P, \mathcal{O}_Q$ denote the orbits of $P, Q$ under the conjugation action of $GL_2(\bF_q)$ on $M_2(\bF_q)$. Then
     \begin{align*}
-        |\mathcal{O}_x| &= q(q + 1) \\
-        |\mathcal{O}_y| &= (q + 1)(q - 1)
+        |\mathcal{O}_P| &= q(q + 1) \\
+        |\mathcal{O}_Q| &= (q + 1)(q - 1)
     \end{align*}
 \end{lemma}
 \begin{proof}
-    We may compute the size of the orbits of $x, y$ by first computing the size of their stabilizers, $G_x, G_y$, and then applying the Orbit-Coset Correspondence Theorem \cite{DandF}*{pg. 114}.
+    We may compute the size of the orbits of $P, Q$ by first computing the size of their stabilizers, $G_P, G_Q$, and then applying the Orbit-Coset Correspondence Theorem \cite{DandF}*{pg. 114}.
     Now
     \begin{align*}
-        G_x &= \{A \in GL_2(\bF_q) \mid A \cdot x = x\} \\
-            &= \{A \in GL_2(\bF_q) \mid AxA^{-1} = x\} \\
-            &= \{A \in GL_2(\bF_q) \mid Ax = xA\} 
+        G_P &= \{A \in GL_2(\bF_q) \mid A \cdot P = P\} \\
+            &= \{A \in GL_2(\bF_q) \mid APA^{-1} = P\} \\
+            &= \{A \in GL_2(\bF_q) \mid AP = PA\} 
     \end{align*}
-    Since matrix multiplication is distributive, matrices of the form $sx + tI$ commute with $x$ for $s,t \in \bF_q$, so if $sx + tI \in GL_2(\bF_q)$, then $sx + tI \in G_x$. These are also the only possible matrices in $G_x$ since they are the elements of the maximal commutative subalgebra containing $x$ (\Cref{commutative-planes}). It now suffices to determine when $\det(sx + tI) = 0$.
+    Since matrix multiplication is distributive, matrices of the form $sP + tI$ commute with $P$ for $s,t \in \bF_q$, so if $sP + tI \in GL_2(\bF_q)$, then $sP + tI \in G_P$. These are also the only possible matrices in $G_P$ since they are the elements of the maximal commutative subalgebra containing $P$ (\Cref{commutative-planes}). It now suffices to determine when $\det(sP + tI) = 0$.
     \begin{equation*}
-        \det(sx+tI) =
+        \det(sP+tI) =
         \begin{vmatrix}
             t & s \\
             s & t
         \end{vmatrix} = t^2 - s^2
     \end{equation*}
-    Therefore, $\det(sx + tI) = 0$ when $t^2 = s^2$, so when $t = \pm s$. This eliminates the $q$ scalar multiples of $x + I$ and the $q$ scalar multiples of $x - I$, of which only $0$ is shared between them. We have thus found precisely $q^2 - 2q + 1 = (q-1)^2$ elements of $G_x$. It follows that
+    Therefore, $\det(sP + tI) = 0$ when $t^2 = s^2$, so when $t = \pm s$. This eliminates the $q$ scalar multiples of $P + I$ and the $q$ scalar multiples of $P - I$, of which only $0$ is shared between them. We have thus found precisely $q^2 - 2q + 1 = (q-1)^2$ elements of $G_P$. It follows that
     \begin{equation*}
-        [GL_2(\bF_q) : G_x] = \frac{(q^2-1)(q^2-q)}{(q-1)^2} = q(q + 1)
+        [GL_2(\bF_q) : G_P] = \frac{(q^2-1)(q^2-q)}{(q-1)^2} = q(q + 1)
     \end{equation*}
-    where $[GL_2(\bF_q) : G_x]$ is the index of $G_x$ in $GL_2(\bF_q)$. By the Orbit-Coset Correspondence Theorem we have that $|\mathcal{O}_x| = q(q + 1)$.
+    where $[GL_2(\bF_q) : G_P]$ is the index of $G_P$ in $GL_2(\bF_q)$. By the Orbit-Coset Correspondence Theorem we have that $|\mathcal{O}_P| = q(q + 1)$.
 
-    Similarly we have $G_y = \{A \in GL_2(\bF_q) | Ay = yA\}$ and the only possible elements of $G_y$ are those of the form $sy + tI$ for $s,t \in \bF_q$ where $sy+tI \in GL_2(\bF_q)$.
+    Similarly we have $G_Q = \{A \in GL_2(\bF_Q) | AQ = QA\}$ and the only possible elements of $G_Q$ are those of the form $sQ + tI$ for $s,t \in \bF_q$ where $sQ+tI \in GL_2(\bF_q)$.
     \begin{equation*}
-        \det(sy+tI) =
+        \det(sQ+tI) =
         \begin{vmatrix}
             t & 0 \\
             s & t
         \end{vmatrix} = t^2
     \end{equation*}
-    So $\det(sy + tI) = 0$ if and only if $t = 0$. There are then $q^2 - q$ elements of $G_y$. Therefore
+    So $\det(sQ + tI) = 0$ if and only if $t = 0$. There are then $q^2 - q$ elements of $G_Q$. Therefore
     \begin{equation*}
-        [GL_2(\bF_q) : G_y] = \frac{(q^2-1)(q^2-q)}{q^2 - q} = q^2 - 1
+        [GL_2(\bF_q) : G_Q] = \frac{(q^2-1)(q^2-q)}{q^2 - q} = q^2 - 1
     \end{equation*}
-    and we have $|\mathcal{O}_y| = q^2 - 1$
+    and we have $|\mathcal{O}_Q| = q^2 - 1$
 \end{proof}
 
 Finally, we are ready to prove the following formulas for the counts of each type of commutative plane in $M_2(\bF_q)$. Note that the sum of the three commutative plane counts is $q^2 + q + 1$ as desired.
@@ -372,22 +379,22 @@ Finally, we are ready to prove the following formulas for the counts of each typ
     \end{align}
 \end{theorem}
 \begin{proof}
-    The elements $x, y$ from \Cref{orbit-sizes} are the rational canonical forms for all matrices with minimal polynomials $X^2 - 1$ and $X^2$ respectively. Note again that two matrices in $M_2(\bF)$ are conjugate if and only if they have the same rational canonical form.
+    The elements $P, Q$ from \Cref{orbit-sizes} are the rational canonical forms for all matrices with minimal polynomials $X^2 - 1$ and $X^2$ respectively. Note again that two matrices in $M_2(\bF)$ are conjugate if and only if they have the same rational canonical form.
 
-    Since $X^2 - 1 = (X + 1)(X - 1)$ is reducible and not separable over $\bF_q$, and $\operatorname{char}(\bF_q) \neq 2$, all of the elements of $\mathcal{O}_x$ generate a commutative plane isomorphic to $\bF_q \times \bF_q$.
+    Since $X^2 - 1 = (X + 1)(X - 1)$ is reducible and separable over $\bF_q$, and $\operatorname{char}(\bF_q) \neq 2$, all of the elements of $\mathcal{O}_P$ generate a commutative plane isomorphic to $\bF_q \times \bF_q$.
 
-    Any copy of $K \subseteq M_2(\bF_q)$ isomorphic to $\bF_q \times \bF_q$ must also contain an element of $\mathcal{O}_x$. To see this, pick a nontrivial element $A \in K$ such that $A$ is orthogonal to the identity. Then $\operatorname{tr}(A) = 0$, and $m_A(X) = p_A(X) = X^2 + \det(A)$. We picked $A \in K$, which means that $m_A(X)$ must also be reducible and not separable. It follows that $\det(A) = -\lambda^2$ for some $\lambda \in \bF_q$. Let $B = A/\lambda \in K$ and observe $\operatorname{tr}(B) = \operatorname{tr}(A)/\lambda = 0$, $\det(B) = \det(A)/\lambda^2 = -\lambda^2/\lambda^2 = -1$. Therefore, $m_B(X) = p_B(X) = X^2 -\operatorname{tr}(B) X + \det(B) = X^2 -1$ as desired.
+    Any copy of $K \subseteq M_2(\bF_q)$ isomorphic to $\bF_q \times \bF_q$ must also contain an element of $\mathcal{O}_P$. To see this, pick a nontrivial element $A \in K$ such that $A$ is orthogonal to the identity. Then $\operatorname{tr}(A) = 0$, and $m_A(X) = p_A(X) = X^2 + \det(A)$. We picked $A \in K$, which means that $m_A(X)$ must also be reducible and separable. It follows that $\det(A) = -\lambda^2$ for some $\lambda \in \bF_q$. Let $B = A/\lambda \in K$ and observe $\operatorname{tr}(B) = \operatorname{tr}(A)/\lambda = 0$, $\det(B) = \det(A)/\lambda^2 = -\lambda^2/\lambda^2 = -1$. Therefore, $m_B(X) = p_B(X) = X^2 -\operatorname{tr}(B) X + \det(B) = X^2 -1$ as desired.
 
-    Furthermore, suppose $B' \in K$ has minimum polynomial $X^2 - 1$. Then $B'$ is orthogonal to the identity as well and $B' = \alpha B$ for some $\alpha \in \bF_q^{\times}$ due to $K$ being dimension $2$. We have $-1 = \det(B') = \alpha^2 \det(B) = -\alpha^2$, so $\alpha = \pm 1$ and $B' = \pm B$. We have therefore shown that each possible choice of $K$ contains exactly $2$ elements of $\mathcal{O}_x$. Applying \Cref{orbit-sizes},
+    Furthermore, suppose $B' \in K$ has minimum polynomial $X^2 - 1$. Then $B'$ is orthogonal to the identity as well and $B' = \alpha B$ for some $\alpha \in \bF_q^{\times}$ due to $K$ being dimension $2$. We have $-1 = \det(B') = \alpha^2 \det(B) = -\alpha^2$, so $\alpha = \pm 1$ and $B' = \pm B$. We have therefore shown that each possible choice of $K$ contains exactly $2$ elements of $\mathcal{O}_P$. Applying \Cref{orbit-sizes},
     {\color{blue} notational abuse here replacing K with $\bF_q \times \bF_q$}. 
     \begin{align*}
-        |[\bF_q \times \bF_q]| = \frac{1}{2}|\mathcal{O}_x|
+        |[\bF_q \times \bF_q]| = \frac{1}{2}|\mathcal{O}_P|
                   = \frac{q(q+1)}{2}
                   = \binom{q + 1}{2}
     \end{align*}
-    Similarly, since $X^2$ is separable over $\bF_q$, all of the elements of $\mathcal{O}_y$ generate a commutative subalgebra isomorphic to ${\bF_q^2}_{nil}$. Any isomorphic copy $K$ will contain exactly $q - 1$ elements of $\mathcal{O}_y$. These are precisely the nontrivial elements of $K$ that are orthogonal to the identity. Applying \Cref{orbit-sizes},
+    Similarly, since $X^2$ is inseparable over $\bF_q$, all of the elements of $\mathcal{O}_Q$ generate a commutative subalgebra isomorphic to ${\bF_q^2}_{nil}$. Any isomorphic copy $K$ will contain exactly $q - 1$ elements of $\mathcal{O}_Q$. These are precisely the nontrivial elements of $K$ that are orthogonal to the identity. Applying \Cref{orbit-sizes},
     \begin{align*}
-        |[{\bF_q^2}_{nil}]| = \frac{1}{q-1}|\mathcal{O}_x|
+        |[{\bF_q^2}_{nil}]| = \frac{1}{q-1}|\mathcal{O}_Q|
                             = \frac{q^2-1}{q-1}
                             = q+1
     \end{align*}
