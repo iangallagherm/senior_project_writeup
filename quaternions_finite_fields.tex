@@ -14,7 +14,7 @@
 
 \title{Investigating the Structure of $M_2(\bF_q)$}
 \author{Ian Gallagher \\ Dr. Eric Brussel}
-\date{\today}
+\date{June 11, 2021}
 
 \begin{document}
 
@@ -124,7 +124,7 @@ With these theorems, we now give a proof of the structure of the generalized qua
         \end{enumerate}
     \end{defn}
 
-    By the Cayley-Hamilton Theorem~\cite{DandF}*{pg. 478}, we know that $m_A(X)$ divides $p_A(X)$. If $A \in \bF_q\cdot I\subset M_2(\bF_q)$, then clearly $m_A(X) = X - A$. If $A \in M_2(\bF_q)-\bF_q\cdot I$ then $m_A(X)$ does not have degree 1, and thus $m_A(X) = p_A(X)$  by Cayley-Hamilton. 
+    By the Cayley-Hamilton Theorem~\cite{DandF}*{pg. 478}, we know that $m_A(X)$ divides $p_A(X)$. If $A \in \bF_q\cdot I\subset M_2(\bF_q)$, then $m_A(X) = X - A$. If $A \in M_2(\bF_q)-\bF_q\cdot I$ then $m_A(X)$ does not have degree 1, and thus $m_A(X) = p_A(X)$  by Cayley-Hamilton. 
     
     \begin{defn}
         A {\it commutative plane of $M_2(\bF_q)$} is a $2$-dimensional commutative subalgebra of $M_2(\bF_q)$.
@@ -371,7 +371,7 @@ To compute the individual count of the orbits of each commutative plane, we firs
 Finally, we are ready to prove the following formulas for the counts of each type of commutative plane in $M_2(\bF_q)$. Note that the sum of the three commutative plane counts is $q^2 + q + 1$ as desired.
 
 \begin{theorem}\label{plane-counts}
-    The size of the orbits of the commutative planes in $M_2(\bF_q)$ under the conjugation action of $GL_2(\bF_q)$ are as follows {\color{blue} Maybe should continue using the orbit notation?}
+    The size of the orbits of the commutative planes in $M_2(\bF_q)$ under the conjugation action of $GL_2(\bF_q)$ are as follows
     \begin{align}
         |[\bF_{q^2}]|                   &= \binom{q}{2} \\
         |[\bF_q \times \bF_q]|          &= \binom{q + 1}{2} \\[0.5em]
@@ -386,7 +386,6 @@ Finally, we are ready to prove the following formulas for the counts of each typ
     Any copy of $K \subseteq M_2(\bF_q)$ isomorphic to $\bF_q \times \bF_q$ must also contain an element of $\mathcal{O}_P$. To see this, pick a nontrivial element $A \in K$ such that $A$ is orthogonal to the identity. Then $\operatorname{tr}(A) = 0$, and $m_A(X) = p_A(X) = X^2 + \det(A)$. We picked $A \in K$, which means that $m_A(X)$ must also be reducible and separable. It follows that $\det(A) = -\lambda^2$ for some $\lambda \in \bF_q$. Let $B = A/\lambda \in K$ and observe $\operatorname{tr}(B) = \operatorname{tr}(A)/\lambda = 0$, $\det(B) = \det(A)/\lambda^2 = -\lambda^2/\lambda^2 = -1$. Therefore, $m_B(X) = p_B(X) = X^2 -\operatorname{tr}(B) X + \det(B) = X^2 -1$ as desired.
 
     Furthermore, suppose $B' \in K$ has minimum polynomial $X^2 - 1$. Then $B'$ is orthogonal to the identity as well and $B' = \alpha B$ for some $\alpha \in \bF_q^{\times}$ due to $K$ being dimension $2$. We have $-1 = \det(B') = \alpha^2 \det(B) = -\alpha^2$, so $\alpha = \pm 1$ and $B' = \pm B$. We have therefore shown that each possible choice of $K$ contains exactly $2$ elements of $\mathcal{O}_P$. Applying \Cref{orbit-sizes},
-    {\color{blue} notational abuse here replacing K with $\bF_q \times \bF_q$}. 
     \begin{align*}
         |[\bF_q \times \bF_q]| = \frac{1}{2}|\mathcal{O}_P|
                   = \frac{q(q+1)}{2}
